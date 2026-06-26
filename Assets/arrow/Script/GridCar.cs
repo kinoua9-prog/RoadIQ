@@ -14,19 +14,16 @@ public class GridCar : MonoBehaviour
     public int winY = 6;
     public Vector3 exitOffset = new Vector3(4f, 0f, 0f);
 
-    public float moveSpeed = 55f;
-    public float moveCooldown = 0f;
-    public float exitSpeed = 12f;
-
-    [Header("Mobile Control")]
-    public float swipeThreshold = 45f;
+    public float moveSpeed = 30f;
+    public float moveCooldown = 0.15f;
+    public float exitSpeed = 10f;
 
     [Header("Sound")]
     public AudioSource moveAudio;
 
     private float nextMoveTime = 0f;
-    private Vector2 startInput;
-    private Vector2 currentInput;
+
+    private Vector2 startMouse;
     private bool dragging;
 
     private Camera cam;
@@ -50,116 +47,84 @@ public class GridCar : MonoBehaviour
 
     private void Update()
     {
-        ReadInput();
-
         if (isMoving || isExiting)
         {
-            MoveToTarget();
+            float speed = isExiting ? exitSpeed : moveSpeed;
+
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                targetPosition,
+                speed * Time.deltaTime
+            );
+
+            if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
+            {
+                transform.position = targetPosition;
+
+                StopMoveSound();
+
+                if (isExiting)
+                {
+                    Debug.Log("LEVEL COMPLETE");
+
+                    if (WinManager.Instance != null)
+                        WinManager.Instance.ShowWinPanel();
+                }
+
+                isMoving = false;
+                isExiting = false;
+            }
+
             return;
         }
 
-        HandleDragMovement();
-    }
-
-    private void ReadInput()
-    {
-        bool pressed = false;
-        bool released = false;
-        bool hasInput = false;
-
-        if (Touchscreen.current != null)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            var touch = Touchscreen.current.primaryTouch;
-
-            currentInput = touch.position.ReadValue();
-            pressed = touch.press.wasPressedThisFrame;
-            released = touch.press.wasReleasedThisFrame;
-
-            if (touch.press.isPressed || pressed || released)
-                hasInput = true;
+            TryStartDrag();
         }
 
-        if (!hasInput && Mouse.current != null)
+        if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
-            currentInput = Mouse.current.position.ReadValue();
-            pressed = Mouse.current.leftButton.wasPressedThisFrame;
-            released = Mouse.current.leftButton.wasReleasedThisFrame;
-            hasInput = true;
-        }
-
-        if (!hasInput)
-            return;
-
-        if (pressed)
-            TryStartDrag(currentInput);
-
-        if (released)
             dragging = false;
-    }
+        }
 
-    private void HandleDragMovement()
-    {
-        if (!dragging)
-            return;
+        if (!dragging) return;
 
-        Vector2 delta = currentInput - startInput;
+        Vector2 currentMouse = Mouse.current.position.ReadValue();
+        Vector2 delta = currentMouse - startMouse;
 
-        if (delta.magnitude < swipeThreshold)
-            return;
+        if (delta.magnitude < 80) return;
 
         if (isHorizontal)
         {
             if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
             {
-                TryMove(delta.x > 0 ? 1 : -1, 0);
-                startInput = currentInput;
+                if (delta.x > 0)
+                    TryMove(1, 0);
+                else
+                    TryMove(-1, 0);
+
+                startMouse = currentMouse;
             }
         }
         else
         {
             if (Mathf.Abs(delta.y) > Mathf.Abs(delta.x))
             {
-                TryMove(0, delta.y > 0 ? 1 : -1);
-                startInput = currentInput;
+                if (delta.y > 0)
+                    TryMove(0, 1);
+                else
+                    TryMove(0, -1);
+
+                startMouse = currentMouse;
             }
         }
     }
 
-    private void MoveToTarget()
+    private void TryStartDrag()
     {
-        float speed = isExiting ? exitSpeed : moveSpeed;
+        Vector2 screenPos = Mouse.current.position.ReadValue();
 
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            targetPosition,
-            speed * Time.deltaTime
-        );
-
-        if (Vector3.Distance(transform.position, targetPosition) > 0.01f)
-            return;
-
-        transform.position = targetPosition;
-        StopMoveSound();
-
-        if (isExiting)
-        {
-            Debug.Log("LEVEL COMPLETE");
-
-            if (WinManager.Instance != null)
-                WinManager.Instance.ShowWinPanel();
-
-            isMoving = false;
-            isExiting = false;
-            dragging = false;
-            return;
-        }
-
-        isMoving = false;
-        isExiting = false;
-    }
-
-    private void TryStartDrag(Vector2 screenPos)
-    {
         Vector3 worldPos3 = cam.ScreenToWorldPoint(screenPos);
         Vector2 worldPos = new Vector2(worldPos3.x, worldPos3.y);
 
@@ -188,7 +153,7 @@ public class GridCar : MonoBehaviour
         if (bestCar == this)
         {
             dragging = true;
-            startInput = screenPos;
+            startMouse = Mouse.current.position.ReadValue();
         }
     }
 
@@ -197,7 +162,7 @@ public class GridCar : MonoBehaviour
         if (Time.unscaledTime < nextMoveTime)
             return;
 
-        if (MovesManager.Instance != null && MovesManager.Instance.gameOver)
+        if (MovesManager.Instance.gameOver)
             return;
 
         int newX = gridX + dx;
@@ -220,10 +185,11 @@ public class GridCar : MonoBehaviour
 
         nextMoveTime = Time.unscaledTime + moveCooldown;
 
-        if (MovesManager.Instance != null)
-            MovesManager.Instance.UseMove();
+        MovesManager.Instance.UseMove();
 
         CheckWin();
+
+        dragging = false;
     }
 
     private void CheckWin()
@@ -254,10 +220,10 @@ public class GridCar : MonoBehaviour
         moveAudio.Play();
     }
 
-    private void StopMoveSound()
-    {
-        // звук не зупиняємо
-    }
+   private void StopMoveSound()
+{
+    // нічого не робимо
+}
 
     public void InitCar(int x, int y, bool horizontal, int carLength, bool mainCar)
     {
