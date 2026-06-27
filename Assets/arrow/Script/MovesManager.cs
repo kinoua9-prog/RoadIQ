@@ -23,6 +23,7 @@ public class MovesManager : MonoBehaviour
     {
         movesLeft = startMoves;
         usedMoves = 0;
+        gameOver = false;
 
         UpdateText();
     }
@@ -42,6 +43,8 @@ public class MovesManager : MonoBehaviour
             movesLeft = 0;
             gameOver = true;
 
+            UpdateText();
+
             Debug.Log("Game Over");
 
             if (LoseManager.Instance != null)
@@ -51,11 +54,36 @@ public class MovesManager : MonoBehaviour
         }
     }
 
+    // Купівля додаткових ходів
+    public void AddMoves(int amount)
+    {
+        if (amount <= 0)
+            return;
+
+        movesLeft += amount;
+
+        UpdateText();
+    }
+
+    // Повернення одного ходу (UNDO)
+    public void ReturnMove()
+    {
+        movesLeft++;
+        usedMoves--;
+
+        if (usedMoves < 0)
+            usedMoves = 0;
+
+        gameOver = false;
+
+        UpdateText();
+    }
+
     private void UpdateText()
     {
         if (movesText != null)
         {
-            movesText.text = "Moves: " + movesLeft;
+            movesText.text = movesLeft.ToString();
         }
     }
 }

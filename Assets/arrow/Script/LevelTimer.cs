@@ -36,6 +36,17 @@ public class LevelTimer : MonoBehaviour
         timerRunning = false;
     }
 
+    // ===== Новий метод =====
+    public void AddTime(float seconds)
+    {
+        elapsedTime -= seconds;
+
+        if (elapsedTime < 0f)
+            elapsedTime = 0f;
+
+        UpdateText();
+    }
+
     public string GetTimeText()
     {
         int minutes = Mathf.FloorToInt(elapsedTime / 60f);

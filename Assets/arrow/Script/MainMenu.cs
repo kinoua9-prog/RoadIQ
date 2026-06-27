@@ -3,16 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject levelsPanel;
+    [Header("Level Panels")]
+    public GameObject[] levelPanels;
+
+    [Header("Levels Pages Manager")]
+    public LevelsPagesManager levelsPagesManager;
 
     public void OpenLevels()
     {
-        levelsPanel.SetActive(true);
+        levelsPagesManager.ResetToFirstPage();
     }
 
     public void CloseLevels()
     {
-        levelsPanel.SetActive(false);
+        foreach (GameObject panel in levelPanels)
+        {
+            panel.SetActive(false);
+        }
     }
 
     public void LoadLevel(int levelNumber)

@@ -26,7 +26,7 @@ public class GridManager : MonoBehaviour
         return new Vector3(
             gridStart.x + x * cellSize + offsetX,
             gridStart.y + y * cellSize + offsetY,
-            0
+            0f
         );
     }
 
@@ -37,6 +37,9 @@ public class GridManager : MonoBehaviour
 
     public void RegisterCar(GridCar car)
     {
+        if (car == null)
+            return;
+
         for (int i = 0; i < car.length; i++)
         {
             int x = car.gridX + (car.isHorizontal ? i : 0);
@@ -49,6 +52,9 @@ public class GridManager : MonoBehaviour
 
     public void UnregisterCar(GridCar car)
     {
+        if (car == null)
+            return;
+
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
@@ -61,6 +67,9 @@ public class GridManager : MonoBehaviour
 
     public bool CanPlace(GridCar car, int newX, int newY)
     {
+        if (car == null)
+            return false;
+
         for (int i = 0; i < car.length; i++)
         {
             int x = newX + (car.isHorizontal ? i : 0);
@@ -75,6 +84,27 @@ public class GridManager : MonoBehaviour
 
         return true;
     }
+
+    public void MoveCarToCell(GridCar car, int newX, int newY)
+    {
+        if (car == null)
+            return;
+
+        UnregisterCar(car);
+
+        car.gridX = newX;
+        car.gridY = newY;
+
+        car.transform.position = GridToWorld(
+            car.gridX,
+            car.gridY,
+            car.isHorizontal,
+            car.length
+        );
+
+        RegisterCar(car);
+    }
+
     public void ClearGrid()
     {
         grid = new GridCar[width, height];

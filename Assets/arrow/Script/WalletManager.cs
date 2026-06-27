@@ -5,9 +5,6 @@ public class WalletManager : MonoBehaviour
 {
     public static WalletManager Instance;
 
-    [Header("UI")]
-    public TMP_Text coinsText;
-
     private const string CoinsKey = "Coins";
 
     private void Awake()
@@ -30,10 +27,7 @@ public class WalletManager : MonoBehaviour
         if (amount <= 0)
             return;
 
-        int coins = GetCoins();
-        coins += amount;
-
-        PlayerPrefs.SetInt(CoinsKey, coins);
+        PlayerPrefs.SetInt(CoinsKey, GetCoins() + amount);
         PlayerPrefs.Save();
 
         UpdateCoinsText();
@@ -41,14 +35,10 @@ public class WalletManager : MonoBehaviour
 
     public bool SpendCoins(int amount)
     {
-        int coins = GetCoins();
-
-        if (coins < amount)
+        if (GetCoins() < amount)
             return false;
 
-        coins -= amount;
-
-        PlayerPrefs.SetInt(CoinsKey, coins);
+        PlayerPrefs.SetInt(CoinsKey, GetCoins() - amount);
         PlayerPrefs.Save();
 
         UpdateCoinsText();
@@ -58,7 +48,15 @@ public class WalletManager : MonoBehaviour
 
     public void UpdateCoinsText()
     {
-        if (coinsText != null)
-            coinsText.text = GetCoins().ToString();
+        CoinsText[] texts = FindObjectsByType<CoinsText>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None
+        );
+
+        foreach (CoinsText text in texts)
+        {
+            if (text != null)
+                text.UpdateText();
+        }
     }
 }
