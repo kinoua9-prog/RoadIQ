@@ -1,19 +1,38 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class AutoButtonSound : MonoBehaviour
 {
     private void Start()
     {
-        Button[] buttons = FindObjectsByType<Button>(FindObjectsSortMode.None);
+        AddSoundToAllButtons();
+    }
+
+    public void AddSoundToAllButtons()
+    {
+        Button[] buttons = FindObjectsByType<Button>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None
+        );
 
         foreach (Button button in buttons)
         {
-            button.onClick.AddListener(() =>
+            if (button.GetComponent<ButtonClickSound>() == null)
             {
-                if (ButtonSoundManager.Instance != null)
-                    ButtonSoundManager.Instance.PlayClick();
-            });
+                button.gameObject.AddComponent<ButtonClickSound>();
+            }
+        }
+    }
+}
+
+public class ButtonClickSound : MonoBehaviour, IPointerDownHandler
+{
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (ButtonSoundManager.Instance != null)
+        {
+            ButtonSoundManager.Instance.PlayClick();
         }
     }
 }

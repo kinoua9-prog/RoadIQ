@@ -21,7 +21,11 @@ public class ButtonSoundManager : MonoBehaviour
 
     public void PlayClick()
     {
-        if (clickSound != null)
+        // Якщо звукові ефекти вимкнені – нічого не відтворюємо
+        if (PlayerPrefs.GetInt("SFX", 1) == 0)
+            return;
+
+        if (clickSound != null && audioSource != null)
             audioSource.PlayOneShot(clickSound);
     }
 }
