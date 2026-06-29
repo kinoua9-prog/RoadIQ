@@ -20,10 +20,6 @@ public class WinManager : MonoBehaviour
     [Header("Sound")]
     public AudioSource winSound;
 
-    [Header("Stars")]
-    public int threeStarMoves = 15;
-    public int twoStarMoves = 25;
-
     private void Awake()
     {
         Instance = this;
@@ -54,6 +50,18 @@ public class WinManager : MonoBehaviour
         }
 
         int used = MovesManager.Instance.usedMoves;
+
+        // Беремо налаштування саме цього рівня
+        LevelSettings levelSettings = FindFirstObjectByType<LevelSettings>();
+
+        int threeStarMoves = 15;
+        int twoStarMoves = 25;
+
+        if (levelSettings != null)
+        {
+            threeStarMoves = levelSettings.threeStarMoves;
+            twoStarMoves = levelSettings.twoStarMoves;
+        }
 
         int stars = 1;
 
@@ -112,7 +120,7 @@ public class WinManager : MonoBehaviour
                 return 1;
 
             case 2:
-                return 300;
+                return 3;
 
             case 3:
                 return 5;
