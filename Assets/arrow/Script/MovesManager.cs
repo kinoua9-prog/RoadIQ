@@ -11,8 +11,9 @@ public class MovesManager : MonoBehaviour
     public int usedMoves = 0;
 
     public TMP_Text movesText;
-
     public bool gameOver = false;
+
+    private const string SelectedLocationKey = "SelectedLocation";
 
     private void Awake()
     {
@@ -21,11 +22,28 @@ public class MovesManager : MonoBehaviour
 
     private void Start()
     {
-        movesLeft = startMoves;
+        int bonusMoves = GetLocationBonusMoves();
+
+        movesLeft = startMoves + bonusMoves;
         usedMoves = 0;
         gameOver = false;
 
         UpdateText();
+
+        Debug.Log("Start moves: " + startMoves + " | Bonus moves: " + bonusMoves);
+    }
+
+    private int GetLocationBonusMoves()
+    {
+        string selectedLocation = PlayerPrefs.GetString(SelectedLocationKey, "CityDay");
+
+        if (selectedLocation == "CityNight")
+            return 1;
+
+        if (selectedLocation == "CityWinter")
+            return 2;
+
+        return 0;
     }
 
     public void UseMove()
@@ -54,7 +72,6 @@ public class MovesManager : MonoBehaviour
         }
     }
 
-    // Купівля додаткових ходів
     public void AddMoves(int amount)
     {
         if (amount <= 0)
@@ -65,7 +82,6 @@ public class MovesManager : MonoBehaviour
         UpdateText();
     }
 
-    // Повернення одного ходу (UNDO)
     public void ReturnMove()
     {
         movesLeft++;

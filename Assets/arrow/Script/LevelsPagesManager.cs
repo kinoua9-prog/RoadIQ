@@ -1,13 +1,26 @@
+using TMPro;
 using UnityEngine;
 
 public class LevelsPagesManager : MonoBehaviour
 {
+    [Header("Level Pages")]
     public GameObject[] levelPanels;
+
+    [Header("Locked Panel")]
+    public GameObject lockedPanel;
+    public TMP_Text currentStarsText;
+    public TMP_Text requiredStarsText;
+
+    [Header("Unlock Settings")]
+    public int[] starsRequiredForPages;
 
     private int currentPage = 0;
 
     private void Start()
     {
+        if (lockedPanel != null)
+            lockedPanel.SetActive(false);
+
         ResetToFirstPage();
     }
 
@@ -19,20 +32,35 @@ public class LevelsPagesManager : MonoBehaviour
 
     public void NextPage()
     {
-        if (currentPage < levelPanels.Length - 1)
+        int nextPage = currentPage + 1;
+
+        if (nextPage >= levelPanels.Length)
+            return;
+
+        if (CanOpenPage(nextPage))
         {
-            currentPage++;
-            ShowPage(currentPage);
+            ShowPage(nextPage);
+        }
+        else
+        {
+            ShowLockedPanel(nextPage);
         }
     }
 
     public void PreviousPage()
     {
-        if (currentPage > 0)
-        {
-            currentPage--;
-            ShowPage(currentPage);
-        }
+        int previousPage = currentPage - 1;
+
+        if (previousPage < 0)
+            return;
+
+        ShowPage(previousPage);
+    }
+
+    public void CloseLockedPanel()
+    {
+        if (lockedPanel != null)
+            lockedPanel.SetActive(false);
     }
 
     private void ShowPage(int pageIndex)
@@ -41,7 +69,59 @@ public class LevelsPagesManager : MonoBehaviour
 
         for (int i = 0; i < levelPanels.Length; i++)
         {
-            levelPanels[i].SetActive(i == currentPage);
+            if (levelPanels[i] != null)
+                levelPanels[i].SetActive(i == currentPage);
         }
+    }
+
+    private bool CanOpenPage(int pageIndex)
+    {
+        if (pageIndex <= 0)
+            return true;
+
+        if (starsRequiredForPages == null || pageIndex >= starsRequiredForPages.Length)
+            return true;
+
+        int requiredStars = starsRequiredForPages[pageIndex];
+        int totalStars = GetTotalStars();
+
+        return totalStars >= requiredStars;
+    }
+
+    private void ShowLockedPanel(int pageIndex)
+    {
+        int requiredStars = 0;
+
+        if (starsRequiredForPages != null && pageIndex < starsRequiredForPages.Length)
+            requiredStars = starsRequiredForPages[pageIndex];
+
+        int totalStars = GetTotalStars();
+
+        if (currentStarsText != null)
+            currentStarsText.text = totalStars.ToString();
+
+        if (requiredStarsText != null)
+            requiredStarsText.text = requiredStars.ToString();
+
+        if (lockedPanel != null)
+        {
+            lockedPanel.SetActive(true);
+            lockedPanel.transform.SetAsLastSibling();
+        }
+    }
+
+    private int GetTotalStars()
+    {
+        int total = 0;
+
+        for (int i = 1; i <= 100; i++)
+        {
+            int starsA = PlayerPrefs.GetInt("Level_" + i + "_Stars", 0);
+            int starsB = PlayerPrefs.GetInt("LevelStars_" + i, 0);
+
+            total += Mathf.Max(starsA, starsB);
+        }
+
+        return total;
     }
 }
