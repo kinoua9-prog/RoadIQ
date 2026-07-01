@@ -1,6 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum ExitDirection
+{
+    Right,
+    Down
+}
+
 public class GridCar : MonoBehaviour
 {
     public bool isHorizontal = true;
@@ -12,7 +18,10 @@ public class GridCar : MonoBehaviour
     public bool isMainCar = false;
     public int winX = 4;
     public int winY = 6;
-    public Vector3 exitOffset = new Vector3(4f, 0f, 0f);
+
+    [Header("Exit")]
+    public ExitDirection exitDirection = ExitDirection.Right;
+    public float exitDistance = 4f;
 
     public float moveSpeed = 55f;
     public float moveCooldown = 0f;
@@ -23,6 +32,8 @@ public class GridCar : MonoBehaviour
 
     [Header("Sound")]
     public AudioSource moveAudio;
+
+    private static bool anyCarMoving = false;
 
     private float nextMoveTime = 0f;
     private Vector2 startInput;
@@ -46,6 +57,17 @@ public class GridCar : MonoBehaviour
         targetPosition = transform.position;
 
         GridManager.Instance.RegisterCar(this);
+    }
+
+    private void OnDisable()
+    {
+        if (isMoving || isExiting || dragging)
+        {
+            anyCarMoving = false;
+            isMoving = false;
+            isExiting = false;
+            dragging = false;
+        }
     }
 
     private void Update()
@@ -102,6 +124,9 @@ public class GridCar : MonoBehaviour
         if (!dragging)
             return;
 
+        if (anyCarMoving && !isMoving && !isExiting)
+            return;
+
         Vector2 delta = currentInput - startInput;
 
         if (delta.magnitude < swipeThreshold)
@@ -132,7 +157,7 @@ public class GridCar : MonoBehaviour
         transform.position = Vector3.MoveTowards(
             transform.position,
             targetPosition,
-            speed * Time.deltaTime
+            speed * Time.unscaledDeltaTime
         );
 
         if (Vector3.Distance(transform.position, targetPosition) > 0.01f)
@@ -151,15 +176,24 @@ public class GridCar : MonoBehaviour
             isMoving = false;
             isExiting = false;
             dragging = false;
+            anyCarMoving = false;
             return;
         }
 
         isMoving = false;
         isExiting = false;
+        dragging = false;
+        anyCarMoving = false;
     }
 
     private void TryStartDrag(Vector2 screenPos)
     {
+        if (anyCarMoving)
+            return;
+
+        if (MovesManager.Instance != null && MovesManager.Instance.gameOver)
+            return;
+
         if (cam == null)
             cam = Camera.main;
 
@@ -200,6 +234,9 @@ public class GridCar : MonoBehaviour
         if (Time.unscaledTime < nextMoveTime)
             return;
 
+        if (anyCarMoving && !isMoving && !isExiting)
+            return;
+
         if (MovesManager.Instance != null && MovesManager.Instance.gameOver)
             return;
 
@@ -213,9 +250,7 @@ public class GridCar : MonoBehaviour
             return;
 
         if (UndoManager.Instance != null)
-        {
             UndoManager.Instance.SaveMove(this, oldX, oldY);
-        }
 
         GridManager.Instance.UnregisterCar(this);
 
@@ -224,6 +259,7 @@ public class GridCar : MonoBehaviour
 
         targetPosition = GridManager.Instance.GridToWorld(gridX, gridY, isHorizontal, length);
         isMoving = true;
+        anyCarMoving = true;
 
         PlayMoveSound();
 
@@ -246,9 +282,16 @@ public class GridCar : MonoBehaviour
         {
             GridManager.Instance.UnregisterCar(this);
 
-            targetPosition = transform.position + exitOffset;
+            Vector3 exitVector = Vector3.right;
+
+            if (exitDirection == ExitDirection.Down)
+                exitVector = Vector3.down;
+
+            targetPosition = transform.position + exitVector * exitDistance;
+
             isExiting = true;
             dragging = false;
+            anyCarMoving = true;
 
             PlayMoveSound();
 
