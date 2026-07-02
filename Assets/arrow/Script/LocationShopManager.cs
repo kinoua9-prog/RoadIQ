@@ -17,16 +17,19 @@ public class LocationShopManager : MonoBehaviour
 
     public LocationItem[] locations;
 
-    private const string SelectedLocationKey = "SelectedLocation";
+    private const string SelectedCityLocationKey = "SelectedCityLocation";
+    private const string SelectedMallLocationKey = "SelectedMallLocation";
     private const string BoughtKey = "Bought_";
 
     private void Start()
     {
-        if (!PlayerPrefs.HasKey(SelectedLocationKey))
-        {
-            PlayerPrefs.SetString(SelectedLocationKey, "CityDay");
-            PlayerPrefs.Save();
-        }
+        if (!PlayerPrefs.HasKey(SelectedCityLocationKey))
+            PlayerPrefs.SetString(SelectedCityLocationKey, "CityDay");
+
+        if (!PlayerPrefs.HasKey(SelectedMallLocationKey))
+            PlayerPrefs.SetString(SelectedMallLocationKey, "MallDay");
+
+        PlayerPrefs.Save();
 
         RefreshButtons();
     }
@@ -71,7 +74,11 @@ public class LocationShopManager : MonoBehaviour
         if (!item.isDefault && !IsBought(locationId))
             return;
 
-        PlayerPrefs.SetString(SelectedLocationKey, locationId);
+        if (IsMallLocation(locationId))
+            PlayerPrefs.SetString(SelectedMallLocationKey, locationId);
+        else
+            PlayerPrefs.SetString(SelectedCityLocationKey, locationId);
+
         PlayerPrefs.Save();
 
         RefreshButtons();
@@ -79,12 +86,16 @@ public class LocationShopManager : MonoBehaviour
 
     public void RefreshButtons()
     {
-        string selectedLocation = PlayerPrefs.GetString(SelectedLocationKey, "CityDay");
+        string selectedCityLocation = PlayerPrefs.GetString(SelectedCityLocationKey, "CityDay");
+        string selectedMallLocation = PlayerPrefs.GetString(SelectedMallLocationKey, "MallDay");
 
         foreach (LocationItem item in locations)
         {
             bool bought = item.isDefault || IsBought(item.locationId);
-            bool equipped = selectedLocation == item.locationId;
+
+            bool equipped = IsMallLocation(item.locationId)
+                ? selectedMallLocation == item.locationId
+                : selectedCityLocation == item.locationId;
 
             if (item.priceButton != null)
                 item.priceButton.SetActive(!bought);
@@ -105,6 +116,13 @@ public class LocationShopManager : MonoBehaviour
             return true;
 
         return PlayerPrefs.GetInt(BoughtKey + locationId, 0) == 1;
+    }
+
+    private bool IsMallLocation(string locationId)
+    {
+        return locationId == "MallDay" ||
+               locationId == "MallNight" ||
+               locationId == "MallWinter";
     }
 
     private LocationItem GetLocation(string locationId)

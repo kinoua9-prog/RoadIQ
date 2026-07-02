@@ -2,17 +2,23 @@ using UnityEngine;
 
 public class LocationMapLoader : MonoBehaviour
 {
-    [Header("Small maps: 1-14")]
+    [Header("City maps: 1-14")]
     public Sprite cityDaySmall;
     public Sprite cityNightSmall;
     public Sprite cityWinterSmall;
 
-    [Header("Big maps: 15-30")]
+    [Header("City maps: 15-30")]
     public Sprite cityDayBig;
     public Sprite cityNightBig;
     public Sprite cityWinterBig;
 
-    private const string SelectedLocationKey = "SelectedLocation";
+    [Header("Mall maps: 31-60")]
+    public Sprite mallDay;
+    public Sprite mallNight;
+    public Sprite mallWinter;
+
+    private const string SelectedCityLocationKey = "SelectedCityLocation";
+    private const string SelectedMallLocationKey = "SelectedMallLocation";
     private const string SelectedLevelKey = "SelectedLevel";
 
     private void Start()
@@ -22,7 +28,6 @@ public class LocationMapLoader : MonoBehaviour
 
     public void LoadSelectedMap()
     {
-        string selectedLocation = PlayerPrefs.GetString(SelectedLocationKey, "CityDay");
         int selectedLevel = PlayerPrefs.GetInt(SelectedLevelKey, 1);
 
         GameObject levelObject = GameObject.Find(selectedLevel.ToString());
@@ -41,19 +46,53 @@ public class LocationMapLoader : MonoBehaviour
             return;
         }
 
-        bool useBigMap = selectedLevel >= 15 && selectedLevel <= 30;
+        Sprite selectedSprite = GetMapSprite(selectedLevel);
 
-        Sprite selectedSprite;
-
-        if (selectedLocation == "CityNight")
-            selectedSprite = useBigMap ? cityNightBig : cityNightSmall;
-        else if (selectedLocation == "CityWinter")
-            selectedSprite = useBigMap ? cityWinterBig : cityWinterSmall;
-        else
-            selectedSprite = useBigMap ? cityDayBig : cityDaySmall;
+        if (selectedSprite == null)
+        {
+            Debug.LogError("Карта не призначена для рівня: " + selectedLevel);
+            return;
+        }
 
         mapRenderer.sprite = selectedSprite;
 
-        Debug.Log("Loaded map sprite: " + selectedLocation + " | Level: " + selectedLevel);
+        Debug.Log("Loaded map sprite | Level: " + selectedLevel);
+    }
+
+    private Sprite GetMapSprite(int selectedLevel)
+    {
+        if (selectedLevel >= 31 && selectedLevel <= 60)
+        {
+            string mallLocation = PlayerPrefs.GetString(SelectedMallLocationKey, "MallDay");
+
+            if (mallLocation == "MallNight")
+                return mallNight;
+
+            if (mallLocation == "MallWinter")
+                return mallWinter;
+
+            return mallDay;
+        }
+
+        string cityLocation = PlayerPrefs.GetString(SelectedCityLocationKey, "CityDay");
+
+        if (selectedLevel >= 15 && selectedLevel <= 30)
+        {
+            if (cityLocation == "CityNight")
+                return cityNightBig;
+
+            if (cityLocation == "CityWinter")
+                return cityWinterBig;
+
+            return cityDayBig;
+        }
+
+        if (cityLocation == "CityNight")
+            return cityNightSmall;
+
+        if (cityLocation == "CityWinter")
+            return cityWinterSmall;
+
+        return cityDaySmall;
     }
 }

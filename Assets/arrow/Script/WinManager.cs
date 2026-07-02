@@ -51,7 +51,6 @@ public class WinManager : MonoBehaviour
 
         int used = MovesManager.Instance.usedMoves;
 
-        // Беремо налаштування саме цього рівня
         LevelSettings levelSettings = FindFirstObjectByType<LevelSettings>();
 
         int threeStarMoves = 15;
@@ -132,6 +131,12 @@ public class WinManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        if (EnergyManager.Instance != null)
+        {
+            if (!EnergyManager.Instance.TryUseEnergy())
+                return;
+        }
+
         Time.timeScale = 1f;
         SceneManager.LoadScene("GameScene");
     }
@@ -144,12 +149,19 @@ public class WinManager : MonoBehaviour
 
     public void NextLevel()
     {
+        if (EnergyManager.Instance != null)
+        {
+            if (!EnergyManager.Instance.TryUseEnergy())
+                return;
+        }
+
         Time.timeScale = 1f;
 
         int currentLevel = PlayerPrefs.GetInt("SelectedLevel", 1);
         currentLevel++;
 
         PlayerPrefs.SetInt("SelectedLevel", currentLevel);
+        PlayerPrefs.Save();
 
         SceneManager.LoadScene("GameScene");
     }

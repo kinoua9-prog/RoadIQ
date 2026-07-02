@@ -40,14 +40,23 @@ public class PauseManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        // Перевіряємо енергію
+        if (EnergyManager.Instance != null)
+        {
+            if (!EnergyManager.Instance.TryUseEnergy())
+                return;
+        }
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     public void CloseSettings()
     {
         settingsPanel.SetActive(false);
         pausePanel.SetActive(true);
     }
+
     public void OpenMenu()
     {
         Time.timeScale = 1f;

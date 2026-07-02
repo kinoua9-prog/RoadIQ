@@ -12,10 +12,17 @@ public class DeveloperTools : MonoBehaviour
             PlayerPrefs.DeleteKey("LevelStars_" + i);
         }
 
-        PlayerPrefs.DeleteKey("SelectedLocation");
+        // Вибрані локації
+        PlayerPrefs.DeleteKey("SelectedCityLocation");
+        PlayerPrefs.DeleteKey("SelectedMallLocation");
 
+        // Куплені City
         PlayerPrefs.DeleteKey("Bought_CityNight");
         PlayerPrefs.DeleteKey("Bought_CityWinter");
+
+        // Куплені Mall
+        PlayerPrefs.DeleteKey("Bought_MallNight");
+        PlayerPrefs.DeleteKey("Bought_MallWinter");
 
         PlayerPrefs.Save();
 
