@@ -7,7 +7,10 @@ public class LevelTimer : MonoBehaviour
 
     public TMP_Text timerText;
 
-    public float elapsedTime;
+    [Header("Level Time")]
+    public float levelTime = 60f; // Час на рівень у секундах
+
+    public float currentTime;
     public bool timerRunning = true;
 
     private void Awake()
@@ -17,7 +20,7 @@ public class LevelTimer : MonoBehaviour
 
     private void Start()
     {
-        elapsedTime = 0f;
+        currentTime = levelTime;
         timerRunning = true;
         UpdateText();
     }
@@ -27,7 +30,17 @@ public class LevelTimer : MonoBehaviour
         if (!timerRunning)
             return;
 
-        elapsedTime += Time.deltaTime;
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0f)
+        {
+            currentTime = 0f;
+            timerRunning = false;
+
+            if (LoseManager.Instance != null)
+                LoseManager.Instance.ShowLosePanel();
+        }
+
         UpdateText();
     }
 
@@ -36,21 +49,16 @@ public class LevelTimer : MonoBehaviour
         timerRunning = false;
     }
 
-    // ===== Новий метод =====
     public void AddTime(float seconds)
     {
-        elapsedTime -= seconds;
-
-        if (elapsedTime < 0f)
-            elapsedTime = 0f;
-
+        currentTime += seconds;
         UpdateText();
     }
 
     public string GetTimeText()
     {
-        int minutes = Mathf.FloorToInt(elapsedTime / 60f);
-        int seconds = Mathf.FloorToInt(elapsedTime % 60f);
+        int minutes = Mathf.FloorToInt(currentTime / 60f);
+        int seconds = Mathf.FloorToInt(currentTime % 60f);
 
         return minutes.ToString("00") + ":" + seconds.ToString("00");
     }

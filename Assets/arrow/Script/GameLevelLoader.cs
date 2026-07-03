@@ -12,16 +12,18 @@ public class GameLevelLoader : MonoBehaviour
     public int smallGridHeight = 11;
     public Vector2 smallGridStart = new Vector2(-2.5f, -4.5f);
     public Vector3 smallCameraPosition = new Vector3(0f, 0.5f, -10f);
-    public float smallCameraSize = 7.8f;
+    public float smallCameraSize16x9 = 7.8f;
+    public float smallCameraSize20x9 = 9.6f;
     public int smallWinX = 4;
     public int smallWinY = 6;
 
-    [Header("Levels 16-29")]
+    [Header("Levels 16-30")]
     public int bigGridWidth = 7;
     public int bigGridHeight = 13;
     public Vector2 bigGridStart = new Vector2(-2.5f, -5.5f);
     public Vector3 bigCameraPosition = new Vector3(0.5f, 0f, -10f);
-    public float bigCameraSize = 9f;
+    public float bigCameraSize16x9 = 9f;
+    public float bigCameraSize20x9 = 11f;
     public int bigWinX = 4;
     public int bigWinY = 7;
 
@@ -33,7 +35,8 @@ public class GameLevelLoader : MonoBehaviour
     public int hugeGridHeight = 13;
     public Vector2 hugeGridStart = new Vector2(-3.5f, -6.5f);
     public Vector3 hugeCameraPosition = new Vector3(0f, 0f, -10f);
-    public float hugeCameraSize = 10f;
+    public float hugeCameraSize16x9 = 10f;
+    public float hugeCameraSize20x9 = 12f;
     public int hugeWinX = 3;
     public int hugeWinY = 0;
 
@@ -127,7 +130,7 @@ public class GameLevelLoader : MonoBehaviour
             if (mainCamera != null)
             {
                 mainCamera.transform.position = smallCameraPosition;
-                mainCamera.orthographicSize = smallCameraSize;
+                SetAdaptiveCameraSize(smallCameraSize16x9, smallCameraSize20x9);
             }
         }
         else if (levelNumber >= 16 && levelNumber <= 30)
@@ -143,7 +146,7 @@ public class GameLevelLoader : MonoBehaviour
             if (mainCamera != null)
             {
                 mainCamera.transform.position = bigCameraPosition;
-                mainCamera.orthographicSize = bigCameraSize;
+                SetAdaptiveCameraSize(bigCameraSize16x9, bigCameraSize20x9);
             }
         }
         else if (levelNumber >= 31 && levelNumber <= 45)
@@ -155,12 +158,28 @@ public class GameLevelLoader : MonoBehaviour
             if (mainCamera != null)
             {
                 mainCamera.transform.position = hugeCameraPosition;
-                mainCamera.orthographicSize = hugeCameraSize;
+                SetAdaptiveCameraSize(hugeCameraSize16x9, hugeCameraSize20x9);
             }
         }
         else
         {
             Debug.LogWarning("Unknown level range: " + levelNumber);
         }
+    }
+
+    private void SetAdaptiveCameraSize(float size16x9, float size20x9)
+    {
+        float aspect = (float)Screen.width / Screen.height;
+
+        float aspect16x9 = 1080f / 1920f; // 0.5625
+        float aspect20x9 = 1080f / 2400f; // 0.45
+
+        float t = Mathf.InverseLerp(aspect16x9, aspect20x9, aspect);
+
+        mainCamera.orthographicSize = Mathf.Lerp(size16x9, size20x9, t);
+
+        Debug.Log("Screen: " + Screen.width + "x" + Screen.height +
+                  " | Aspect: " + aspect +
+                  " | Camera Size: " + mainCamera.orthographicSize);
     }
 }
