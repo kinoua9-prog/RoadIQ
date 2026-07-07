@@ -11,6 +11,7 @@ public class EnergyManager : MonoBehaviour
     public int restoreMinutes = 5;
 
     [Header("UI")]
+    public GameObject energyRoot;
     public GameObject[] energyIcons;
     public TMP_Text energyText;
     public TMP_Text timerText;
@@ -39,12 +40,21 @@ public class EnergyManager : MonoBehaviour
 
     private void Update()
     {
+        if (PurchaseState.DisableEnergy)
+        {
+            UpdateUI();
+            return;
+        }
+
         RestoreEnergyByTime();
         UpdateTimer();
     }
 
     public bool TryUseEnergy()
     {
+        if (PurchaseState.DisableEnergy)
+            return true;
+
         RestoreEnergyByTime();
 
         if (currentEnergy <= 0)
@@ -111,6 +121,20 @@ public class EnergyManager : MonoBehaviour
 
     private void UpdateUI()
     {
+        if (energyRoot != null)
+            energyRoot.SetActive(!PurchaseState.DisableEnergy);
+
+        if (PurchaseState.DisableEnergy)
+        {
+            if (timerText != null)
+                timerText.text = "";
+
+            if (noEnergyPanel != null)
+                noEnergyPanel.SetActive(false);
+
+            return;
+        }
+
         if (energyText != null)
             energyText.text = currentEnergy + "/" + maxEnergy;
 
@@ -127,7 +151,7 @@ public class EnergyManager : MonoBehaviour
     {
         string timeText = "";
 
-        if (currentEnergy < maxEnergy)
+        if (!PurchaseState.DisableEnergy && currentEnergy < maxEnergy)
         {
             string savedTime = PlayerPrefs.GetString(LastEnergyTimeKey, DateTime.Now.ToString());
 
@@ -152,6 +176,9 @@ public class EnergyManager : MonoBehaviour
 
     public void ShowNoEnergyPanel()
     {
+        if (PurchaseState.DisableEnergy)
+            return;
+
         UpdateTimer();
 
         if (noEnergyPanel != null)
@@ -166,12 +193,19 @@ public class EnergyManager : MonoBehaviour
 
     public void AddEnergy(int amount)
     {
+        if (PurchaseState.DisableEnergy)
+            return;
+
         currentEnergy += amount;
 
         if (currentEnergy > maxEnergy)
             currentEnergy = maxEnergy;
 
         SaveEnergy();
+        UpdateUI();
+    }
+    public void RefreshUI()
+    {
         UpdateUI();
     }
 }

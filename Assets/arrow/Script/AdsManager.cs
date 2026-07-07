@@ -10,10 +10,17 @@ public class AdsManager : MonoBehaviour
     [SerializeField] private string rewardedAdUnitId = "ca-app-pub-3940256099942544/5224354917";
     [SerializeField] private string interstitialAdUnitId = "ca-app-pub-3940256099942544/1033173712";
 
+    [Header("Interstitial Frequency")]
+    [SerializeField] private int minLevelsBetweenAds = 5;
+    [SerializeField] private int maxLevelsBetweenAds = 10;
+
     private RewardedAd rewardedAd;
     private InterstitialAd interstitialAd;
 
     private Action pendingRewardAction;
+
+    private const string LevelsSinceInterstitialKey = "LevelsSinceInterstitial";
+    private const string NextInterstitialAfterKey = "NextInterstitialAfter";
 
     private void Awake()
     {
@@ -25,6 +32,11 @@ public class AdsManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        if (!PlayerPrefs.HasKey(NextInterstitialAfterKey))
+        {
+            SetNextInterstitialTarget();
+        }
     }
 
     private void Start()
@@ -35,6 +47,8 @@ public class AdsManager : MonoBehaviour
             LoadInterstitialAd();
         });
     }
+
+    // ================= REWARDED =================
 
     public void LoadRewardedAd()
     {
@@ -75,7 +89,17 @@ public class AdsManager : MonoBehaviour
     {
         ShowRewardedAd(() =>
         {
-            AddCoins(10);
+            if (WalletManager.Instance != null)
+                WalletManager.Instance.AddCoins(10);
+        });
+    }
+
+    public void ShowRewardedAdForEnergy()
+    {
+        ShowRewardedAd(() =>
+        {
+            if (EnergyManager.Instance != null)
+                EnergyManager.Instance.AddEnergy(1);
         });
     }
 
@@ -88,7 +112,6 @@ public class AdsManager : MonoBehaviour
             rewardedAd.Show(reward =>
             {
                 Debug.Log("Reward earned.");
-
                 pendingRewardAction?.Invoke();
                 pendingRewardAction = null;
             });
@@ -101,21 +124,7 @@ public class AdsManager : MonoBehaviour
         }
     }
 
-    private void AddCoins(int amount)
-    {
-        int coins = PlayerPrefs.GetInt("Coins", 0);
-        coins += amount;
-
-        PlayerPrefs.SetInt("Coins", coins);
-        PlayerPrefs.Save();
-
-        if (WalletManager.Instance != null)
-        {
-            WalletManager.Instance.UpdateCoinsText();
-        }
-
-        Debug.Log("Coins added: +" + amount);
-    }
+    // ================= INTERSTITIAL =================
 
     public void LoadInterstitialAd()
     {
@@ -154,6 +163,12 @@ public class AdsManager : MonoBehaviour
 
     public void ShowInterstitialAd()
     {
+        if (PurchaseState.RemoveAds)
+        {
+            Debug.Log("Interstitial skipped: Remove Ads purchased.");
+            return;
+        }
+
         if (interstitialAd != null && interstitialAd.CanShowAd())
         {
             interstitialAd.Show();
@@ -163,5 +178,45 @@ public class AdsManager : MonoBehaviour
             Debug.Log("Interstitial ad is not ready.");
             LoadInterstitialAd();
         }
+    }
+
+    public void TryShowRandomInterstitialAfterLevel()
+    {
+        if (PurchaseState.RemoveAds)
+        {
+            Debug.Log("Random interstitial skipped: Remove Ads purchased.");
+            return;
+        }
+
+        int levelsSinceAd = PlayerPrefs.GetInt(LevelsSinceInterstitialKey, 0);
+        int nextAdAfter = PlayerPrefs.GetInt(NextInterstitialAfterKey, 7);
+
+        levelsSinceAd++;
+
+        Debug.Log("Interstitial counter: " + levelsSinceAd + "/" + nextAdAfter);
+
+        if (levelsSinceAd >= nextAdAfter)
+        {
+            levelsSinceAd = 0;
+            PlayerPrefs.SetInt(LevelsSinceInterstitialKey, levelsSinceAd);
+            SetNextInterstitialTarget();
+
+            ShowInterstitialAd();
+        }
+        else
+        {
+            PlayerPrefs.SetInt(LevelsSinceInterstitialKey, levelsSinceAd);
+            PlayerPrefs.Save();
+        }
+    }
+
+    private void SetNextInterstitialTarget()
+    {
+        int next = UnityEngine.Random.Range(minLevelsBetweenAds, maxLevelsBetweenAds + 1);
+
+        PlayerPrefs.SetInt(NextInterstitialAfterKey, next);
+        PlayerPrefs.Save();
+
+        Debug.Log("Next interstitial after " + next + " completed levels.");
     }
 }

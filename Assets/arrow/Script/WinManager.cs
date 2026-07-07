@@ -163,6 +163,9 @@ public class WinManager : MonoBehaviour
         PlayerPrefs.SetInt("SelectedLevel", currentLevel);
         PlayerPrefs.Save();
 
+        if (AdsManager.Instance != null)
+            AdsManager.Instance.TryShowRandomInterstitialAfterLevel();
+
         SceneManager.LoadScene("GameScene");
     }
 }
