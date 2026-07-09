@@ -24,7 +24,7 @@ public class GameLevelLoader : MonoBehaviour
     public Vector3 bigCameraPosition = new Vector3(0.5f, 0f, -10f);
     public float bigCameraSize16x9 = 9f;
     public float bigCameraSize20x9 = 11f;
-    public int bigWinX = 4;
+    public int bigWinX = 5;
     public int bigWinY = 7;
 
     [Header("Level 30 Fix")]
@@ -53,6 +53,11 @@ public class GameLevelLoader : MonoBehaviour
             : PlayerPrefs.GetInt("SelectedLevel", 1);
 
         LoadLevel(level);
+        if (MovesManager.Instance != null)
+            MovesManager.Instance.InitMoves();
+
+        if (LevelTimer.Instance != null)
+            LevelTimer.Instance.InitTimer();
     }
 
     public void LoadLevel(int levelNumber)

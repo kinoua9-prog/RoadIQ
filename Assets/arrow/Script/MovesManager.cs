@@ -22,6 +22,16 @@ public class MovesManager : MonoBehaviour
 
     private void Start()
     {
+        InitMoves();
+    }
+
+    public void InitMoves()
+    {
+        LevelSettings settings = FindFirstObjectByType<LevelSettings>();
+
+        if (settings != null)
+            startMoves = settings.startMoves;
+
         int bonusMoves = GetLocationBonusMoves();
 
         movesLeft = startMoves + bonusMoves;
@@ -54,22 +64,18 @@ public class MovesManager : MonoBehaviour
         movesLeft--;
         usedMoves++;
 
-        UpdateText();
-
         if (movesLeft <= 0)
         {
             movesLeft = 0;
             gameOver = true;
 
-            UpdateText();
-
             Debug.Log("Game Over");
 
             if (LoseManager.Instance != null)
-            {
                 LoseManager.Instance.ShowLosePanel();
-            }
         }
+
+        UpdateText();
     }
 
     public void AddMoves(int amount)
@@ -78,7 +84,6 @@ public class MovesManager : MonoBehaviour
             return;
 
         movesLeft += amount;
-
         UpdateText();
     }
 
@@ -91,15 +96,12 @@ public class MovesManager : MonoBehaviour
             usedMoves = 0;
 
         gameOver = false;
-
         UpdateText();
     }
 
     private void UpdateText()
     {
         if (movesText != null)
-        {
             movesText.text = movesLeft.ToString();
-        }
     }
 }

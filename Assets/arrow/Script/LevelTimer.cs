@@ -7,8 +7,8 @@ public class LevelTimer : MonoBehaviour
 
     public TMP_Text timerText;
 
-    [Header("Level Time")]
-    public float levelTime = 60f; // Час на рівень у секундах
+    [Header("Default Level Time")]
+    public float levelTime = 60f;
 
     public float currentTime;
     public bool timerRunning = true;
@@ -20,6 +20,16 @@ public class LevelTimer : MonoBehaviour
 
     private void Start()
     {
+        InitTimer();
+    }
+
+    public void InitTimer()
+    {
+        LevelSettings settings = FindFirstObjectByType<LevelSettings>();
+
+        if (settings != null)
+            levelTime = settings.levelTime;
+
         currentTime = levelTime;
         timerRunning = true;
         UpdateText();
