@@ -244350,7 +244350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GridCar
   isHorizontal: 1
   length: 2
-  gridX: 2
+  gridX: 1
   gridY: 2
   isMainCar: 0
   winX: 4
