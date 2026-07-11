@@ -21,7 +21,11 @@ public class LevelsPagesManager : MonoBehaviour
         if (lockedPanel != null)
             lockedPanel.SetActive(false);
 
-        ResetToFirstPage();
+        for (int i = 0; i < levelPanels.Length; i++)
+        {
+            if (levelPanels[i] != null)
+                levelPanels[i].SetActive(false);
+        }
     }
 
     public void ResetToFirstPage()

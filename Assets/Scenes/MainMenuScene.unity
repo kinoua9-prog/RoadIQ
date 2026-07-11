@@ -1062,8 +1062,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 880959791}
-        m_TargetAssemblyTypeName: RoadIQ_IAPManager, Assembly-CSharp
+      - m_Target: {fileID: 847467201}
+        m_TargetAssemblyTypeName: ShopButtons, Assembly-CSharp
         m_MethodName: BuyDisableEnergy
         m_Mode: 1
         m_Arguments:
@@ -5755,9 +5755,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 880959791}
-        m_TargetAssemblyTypeName: RoadIQ_IAPManager, Assembly-CSharp
-        m_MethodName: BuyCoins100
+      - m_Target: {fileID: 847467201}
+        m_TargetAssemblyTypeName: ShopButtons, Assembly-CSharp
+        m_MethodName: Buy100Coins
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5805,6 +5805,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478636088}
   m_CullTransparentMesh: 1
+--- !u!1 &485780846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 485780848}
+  - component: {fileID: 485780847}
+  m_Layer: 0
+  m_Name: AdsButtons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &485780847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485780846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c0e974a8c215440a4441dd31345754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdsButtons
+--- !u!4 &485780848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485780846}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 581.1628, y: 1248.6547, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &487209899
 GameObject:
   m_ObjectHideFlags: 0
@@ -7622,9 +7666,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 880959791}
-        m_TargetAssemblyTypeName: RoadIQ_IAPManager, Assembly-CSharp
-        m_MethodName: BuyCoins300
+      - m_Target: {fileID: 847467201}
+        m_TargetAssemblyTypeName: ShopButtons, Assembly-CSharp
+        m_MethodName: Buy300Coins
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10527,6 +10571,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841948257}
   m_CullTransparentMesh: 1
+--- !u!1 &847467200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 847467202}
+  - component: {fileID: 847467201}
+  m_Layer: 0
+  m_Name: Shop Buton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &847467201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847467200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2cc3fb0833a9174c9f2c52f8475ad47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopButtons
+--- !u!4 &847467202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847467200}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 581.1628, y: 1248.6547, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &849976539
 GameObject:
   m_ObjectHideFlags: 0
@@ -16297,6 +16385,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1880441254}
+    - target: {fileID: 2766013228215496193, guid: 25331ff4c0b4d4b4891a96d3de9ca842, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4579267211992808447, guid: 25331ff4c0b4d4b4891a96d3de9ca842, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -16619,9 +16711,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1401594064}
-        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
-        m_MethodName: ShowRewardedAd
+      - m_Target: {fileID: 485780847}
+        m_TargetAssemblyTypeName: AdsButtons, Assembly-CSharp
+        m_MethodName: ShowCoinsRewardedAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18970,8 +19062,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 880959791}
-        m_TargetAssemblyTypeName: RoadIQ_IAPManager, Assembly-CSharp
+      - m_Target: {fileID: 847467201}
+        m_TargetAssemblyTypeName: ShopButtons, Assembly-CSharp
         m_MethodName: BuyRemoveAds
         m_Mode: 1
         m_Arguments:
@@ -20252,9 +20344,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1401594064}
-        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
-        m_MethodName: ShowRewardedAdForEnergy
+      - m_Target: {fileID: 485780847}
+        m_TargetAssemblyTypeName: AdsButtons, Assembly-CSharp
+        m_MethodName: ShowEnergyRewardedAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24414,7 +24506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2085073208601499173, guid: 25331ff4c0b4d4b4891a96d3de9ca842, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.100006
+      value: 7.0999756
       objectReference: {fileID: 0}
     - target: {fileID: 2085073208601499173, guid: 25331ff4c0b4d4b4891a96d3de9ca842, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -24436,6 +24528,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1880441254}
+    - target: {fileID: 2766013228215496193, guid: 25331ff4c0b4d4b4891a96d3de9ca842, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4579267211992808447, guid: 25331ff4c0b4d4b4891a96d3de9ca842, type: 3}
       propertyPath: m_Color.a
       value: 0.003921569
@@ -26835,7 +26931,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.028, y: 0.104}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.6, y: 0.1661377}
+  m_AnchoredPosition: {x: -2.600006, y: 0.1661377}
   m_SizeDelta: {x: -3.1202621, y: -10.756714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6356795641791421676
@@ -26889,6 +26985,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 151752265095822851, guid: 7a97ece137655444ca37f4cd015ebeaa, type: 3}
     - target: {fileID: 109123937733174613, guid: ed1dec39154142144b2973f0e0f35452, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.9744445
+      objectReference: {fileID: 0}
+    - target: {fileID: 109123937733174613, guid: ed1dec39154142144b2973f0e0f35452, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.97300005
+      objectReference: {fileID: 0}
+    - target: {fileID: 109123937733174613, guid: ed1dec39154142144b2973f0e0f35452, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.87666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 109123937733174613, guid: ed1dec39154142144b2973f0e0f35452, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.883
+      objectReference: {fileID: 0}
+    - target: {fileID: 109123937733174613, guid: ed1dec39154142144b2973f0e0f35452, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 109123937733174613, guid: ed1dec39154142144b2973f0e0f35452, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 109123937733174613, guid: ed1dec39154142144b2973f0e0f35452, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.72496
       objectReference: {fileID: 0}
@@ -26898,11 +27018,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 109123937733174613, guid: ed1dec39154142144b2973f0e0f35452, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 380
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 109123937733174613, guid: ed1dec39154142144b2973f0e0f35452, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 423
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 223150841029140692, guid: ed1dec39154142144b2973f0e0f35452, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -27924,4 +28044,6 @@ SceneRoots:
   - {fileID: 1931603793}
   - {fileID: 1243868195}
   - {fileID: 880959792}
+  - {fileID: 485780848}
+  - {fileID: 847467202}
   - {fileID: 1401594065}
