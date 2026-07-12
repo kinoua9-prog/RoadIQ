@@ -2669,6 +2669,18 @@ PrefabInstance:
       propertyPath: gridY
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11032,9 +11044,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &104162591
@@ -23252,6 +23264,18 @@ PrefabInstance:
       propertyPath: gridY
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25814,6 +25838,18 @@ PrefabInstance:
     - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
       propertyPath: gridY
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58262,6 +58298,18 @@ PrefabInstance:
       propertyPath: gridY
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -76397,8 +76445,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -84818,6 +84866,18 @@ PrefabInstance:
       propertyPath: gridY
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -88873,8 +88933,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -101828,16 +101888,20 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
-      propertyPath: moveSpeed
-      value: 0
+      propertyPath: exitSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
-      propertyPath: exitDistance
+      propertyPath: moveSpeed
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
       propertyPath: moveCooldown
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -107742,6 +107806,18 @@ PrefabInstance:
     - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
       propertyPath: gridY
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -117558,6 +117634,18 @@ PrefabInstance:
       propertyPath: gridY
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -124463,6 +124551,18 @@ PrefabInstance:
     - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
       propertyPath: gridY
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -135454,6 +135554,18 @@ PrefabInstance:
       propertyPath: gridY
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -143835,6 +143947,18 @@ PrefabInstance:
     - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
       propertyPath: gridY
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -165001,6 +165125,18 @@ PrefabInstance:
       propertyPath: gridY
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -168827,6 +168963,18 @@ PrefabInstance:
     - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
       propertyPath: gridY
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -180785,6 +180933,18 @@ PrefabInstance:
     - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
       propertyPath: gridY
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -200692,6 +200852,18 @@ PrefabInstance:
     - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
       propertyPath: gridY
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: exitSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315547899059686463, guid: 493196b19bab05a47ba6073534fcc4e3, type: 3}
+      propertyPath: moveCooldown
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -222531,9 +222703,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &68857092280044643
@@ -222658,8 +222830,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -223111,8 +223283,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -223196,8 +223368,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -223289,9 +223461,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &173127514715495791
@@ -223616,8 +223788,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -223835,8 +224007,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -223861,9 +224033,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &273693939906530661
@@ -224139,10 +224311,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &289270723773094998
@@ -224365,8 +224537,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -224452,8 +224624,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -224700,9 +224872,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &344759480259306345
@@ -225081,9 +225253,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &401068872316295442
@@ -225107,8 +225279,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -225148,8 +225320,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -225174,9 +225346,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &409036267511027834
@@ -225374,8 +225546,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -225716,8 +225888,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -226025,9 +226197,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &482457251059174349
@@ -226110,8 +226282,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -226355,9 +226527,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &496319554895708418
@@ -226616,9 +226788,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &531139279273397668
@@ -226722,10 +226894,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &552494041757883567
@@ -226749,9 +226921,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &553324179009367575
@@ -226977,7 +227149,6 @@ Transform:
   - {fileID: 851524245571703487}
   - {fileID: 2504896514123424493}
   - {fileID: 6419198364906619147}
-  - {fileID: 1563711393923427845}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &563614613302231506
@@ -227768,8 +227939,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -228265,9 +228436,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &676059166534688286
@@ -228643,8 +228814,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -228743,9 +228914,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &719133948925094903
@@ -228814,10 +228985,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &726157104520004442
@@ -228887,8 +229058,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -228959,9 +229130,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &734454489668938659
@@ -228985,9 +229156,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &737295137155203343
@@ -230028,9 +230199,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &821503803789918971
@@ -230541,9 +230712,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &857342853690390749
@@ -230707,8 +230878,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -230748,8 +230919,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -230950,8 +231121,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -230976,9 +231147,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &924247068937014032
@@ -231265,8 +231436,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -231617,9 +231788,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &1033315436090408346
@@ -231678,8 +231849,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -232221,8 +232392,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -232522,8 +232693,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -232757,9 +232928,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &1140922603380499012
@@ -232952,8 +233123,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -233243,9 +233414,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &1203425462819547936
@@ -233631,9 +233802,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &1229596981635718377
@@ -233723,8 +233894,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -233928,9 +234099,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &1277124257893039452
@@ -233954,8 +234125,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -234111,9 +234282,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &1288587392825709323
@@ -234242,9 +234413,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &1298232085375475321
@@ -234327,9 +234498,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &1315225848772446839
@@ -234429,9 +234600,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &1325436812729518338
@@ -234455,8 +234626,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -234577,8 +234748,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -234766,10 +234937,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &1360318545042784912
@@ -234998,9 +235169,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &1379576793030034422
@@ -235417,9 +235588,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &1401425522508248623
@@ -235443,9 +235614,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &1410116457041580761
@@ -235967,9 +236138,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &1456497475083688182
@@ -236386,8 +236557,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -236412,9 +236583,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &1479233837356298954
@@ -236438,9 +236609,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &1483745991392799290
@@ -236511,9 +236682,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &1497610936260293167
@@ -236708,9 +236879,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &1505298060247028262
@@ -237345,8 +237516,8 @@ Transform:
   m_GameObject: {fileID: 52321206970205151}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.68, y: -0.4, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6635431014426666231}
@@ -237367,7 +237538,7 @@ Transform:
   - {fileID: 1461421970382605562}
   - {fileID: 2818749824221316373}
   - {fileID: 4472318435726627387}
-  m_Father: {fileID: 563276371507101129}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1568258715997555485
 Transform:
@@ -237471,9 +237642,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &1579592088018854259
@@ -237867,9 +238038,9 @@ MonoBehaviour:
   winY: 11
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &1606123819425370079
@@ -237913,9 +238084,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &1611352356171442484
@@ -238005,7 +238176,6 @@ Transform:
   - {fileID: 3493585373392365694}
   - {fileID: 4900380793099662420}
   - {fileID: 7783854540280394274}
-  - {fileID: 8431421159396438458}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1620754449584596823
@@ -238216,8 +238386,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -238258,8 +238428,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -238615,9 +238785,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &1698350405977894394
@@ -238700,9 +238870,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &1707635660324031887
@@ -239076,8 +239246,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -239219,9 +239389,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &1742811306969709958
@@ -239460,9 +239630,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &1771206197463219995
@@ -239501,9 +239671,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &1785126712685076031
@@ -239704,9 +239874,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &1808047153785152221
@@ -239937,9 +240107,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &1832933885153431518
@@ -240313,8 +240483,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -240564,8 +240734,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -240590,8 +240760,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -240937,9 +241107,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &1961005231485832076
@@ -240998,9 +241168,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &1969639307914285538
@@ -241274,8 +241444,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -242403,10 +242573,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &2114961788453417251
@@ -242522,9 +242692,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &2122629887470573654
@@ -242895,8 +243065,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -242921,9 +243091,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &2182586642378903233
@@ -242947,8 +243117,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -243143,8 +243313,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -243463,9 +243633,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &2249810418221628092
@@ -243733,9 +243903,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &2294544879586567499
@@ -243759,8 +243929,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -244349,9 +244519,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &2337701504614303720
@@ -245758,9 +245928,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &2454316979426657229
@@ -245843,8 +246013,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -246041,10 +246211,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &2487232877761709548
@@ -246203,9 +246373,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &2503132546515099513
@@ -246471,9 +246641,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &2521772072558522005
@@ -246552,8 +246722,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -246644,8 +246814,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -247009,9 +247179,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &2560109941401468538
@@ -247081,9 +247251,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &2570662630306202991
@@ -247280,9 +247450,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &2609535861028780847
@@ -247392,8 +247562,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -247418,8 +247588,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -247756,8 +247926,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -247782,9 +247952,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &2680339917565666997
@@ -247808,8 +247978,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -247834,9 +248004,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &2696967804033270173
@@ -248024,9 +248194,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &2709790731267261610
@@ -248407,8 +248577,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -248767,9 +248937,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &2786984694107279908
@@ -248882,8 +249052,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -248908,8 +249078,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -249189,9 +249359,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &2833992612959662142
@@ -249625,9 +249795,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &2867545991308755497
@@ -249776,9 +249946,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &2880352938478860503
@@ -249802,9 +249972,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &2880427256090350730
@@ -250453,9 +250623,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &2964250656524479302
@@ -250478,10 +250648,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &2967148401346959487
@@ -250610,9 +250780,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &2971191259981258420
@@ -250695,9 +250865,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &2974115256285281399
@@ -250721,9 +250891,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &2974330933441330704
@@ -250767,9 +250937,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &2978356306529059932
@@ -250913,8 +251083,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -251144,8 +251314,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -251425,9 +251595,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &3050554125443753141
@@ -251451,9 +251621,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &3051577363459188430
@@ -251536,9 +251706,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &3052434991042634641
@@ -251667,9 +251837,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &3068056295330588559
@@ -251693,9 +251863,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &3072869890810616051
@@ -251719,8 +251889,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -251880,9 +252050,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &3102530644671622008
@@ -252171,8 +252341,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -252197,9 +252367,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &3132045328521931780
@@ -252223,8 +252393,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -252677,9 +252847,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &3187120450713057562
@@ -252818,9 +252988,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &3216323233643669496
@@ -252844,8 +253014,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -253425,8 +253595,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -253486,9 +253656,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &3275564265389812824
@@ -253724,9 +253894,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &3307196629447300697
@@ -253750,9 +253920,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &3312163867671357736
@@ -253796,8 +253966,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -253837,9 +254007,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &3334208564997532871
@@ -254323,9 +254493,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &3384793685476815812
@@ -254428,8 +254598,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -254469,8 +254639,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -254742,8 +254912,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -255209,8 +255379,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -255587,8 +255757,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -255674,8 +255844,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -255802,8 +255972,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -255847,9 +256017,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &3549477910505017297
@@ -256038,8 +256208,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -256064,9 +256234,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &3578582581314051659
@@ -256289,8 +256459,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -256536,8 +256706,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -256950,8 +257120,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -257022,9 +257192,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &3683285295563047829
@@ -257068,8 +257238,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -257518,8 +257688,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -257633,9 +257803,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &3749552446451223169
@@ -257784,8 +257954,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -257830,8 +258000,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -257856,9 +258026,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &3757898473458794257
@@ -258743,9 +258913,9 @@ MonoBehaviour:
   winY: 11
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &3803024092505631700
@@ -259133,8 +259303,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -259770,9 +259940,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &3873229865751205723
@@ -259903,9 +260073,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &3893194228607453254
@@ -260008,8 +260178,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -260034,9 +260204,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &3907855418451624424
@@ -260282,8 +260452,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -261068,8 +261238,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -261094,8 +261264,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -261441,9 +261611,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &4034499191277293583
@@ -261619,9 +261789,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &4072078712036704110
@@ -261764,9 +261934,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &4090038175983974458
@@ -261790,9 +261960,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &4092442703685824410
@@ -262159,9 +262329,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &4114197813599574088
@@ -262185,9 +262355,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &4116396982878877064
@@ -262257,8 +262427,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -262303,9 +262473,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &4124346416746459255
@@ -262423,8 +262593,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -262668,9 +262838,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &4156677838840233838
@@ -262768,9 +262938,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &4168953907971709333
@@ -263008,8 +263178,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -263618,9 +263788,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &4230880283438593287
@@ -263644,9 +263814,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &4232895449178728651
@@ -263775,9 +263945,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &4236779724525732376
@@ -263946,8 +264116,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -264850,9 +265020,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &4313634950903740424
@@ -265265,10 +265435,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &4350317458516924410
@@ -265640,9 +265810,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &4387966075350771388
@@ -265955,8 +266125,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -266123,8 +266293,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -266339,9 +266509,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &4437081897551370571
@@ -266411,8 +266581,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -267124,8 +267294,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -267224,8 +267394,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -267356,8 +267526,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -267382,8 +267552,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -267765,8 +267935,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -267942,9 +268112,9 @@ MonoBehaviour:
   winY: 11
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &4599917436899838786
@@ -268652,9 +268822,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &4653605721856939392
@@ -269018,8 +269188,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -269719,10 +269889,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &4705060953625934200
@@ -269766,9 +269936,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &4705872930720571809
@@ -269933,9 +270103,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &4714879066349791191
@@ -270097,9 +270267,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &4729612753903384559
@@ -270182,9 +270352,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &4735700305171633369
@@ -270223,9 +270393,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &4738701457543913710
@@ -270417,8 +270587,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -270680,8 +270850,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -270706,9 +270876,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &4818218685116172265
@@ -270806,9 +270976,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &4824883502676949674
@@ -271261,8 +271431,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -271512,9 +271682,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &4900380793099662420
@@ -272149,9 +272319,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &4947155842964421575
@@ -272539,9 +272709,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &4968771320341581062
@@ -273626,9 +273796,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &5053493446373463519
@@ -273652,8 +273822,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -274448,9 +274618,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &5111938875360272913
@@ -274870,9 +275040,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &5161100620369790991
@@ -275028,9 +275198,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &5169691471073499420
@@ -275252,8 +275422,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -275458,9 +275628,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &5199982174505377399
@@ -276935,8 +277105,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -277264,8 +277434,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -277290,9 +277460,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &5367858185606532060
@@ -278009,9 +278179,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &5418201426625238406
@@ -278035,9 +278205,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &5418843291771723753
@@ -278457,9 +278627,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &5444104844141189697
@@ -278600,9 +278770,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &5459986192871803883
@@ -278932,9 +279102,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &5493794802391936732
@@ -279131,8 +279301,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -279157,9 +279327,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &5510260041224670721
@@ -279539,9 +279709,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &5551536228950379512
@@ -279630,8 +279800,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -279788,8 +279958,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -280256,9 +280426,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &5600276747732770775
@@ -280534,8 +280704,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -281820,8 +281990,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -282380,9 +282550,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &5700984444549290131
@@ -283269,9 +283439,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &5753130063476832478
@@ -283501,8 +283671,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -283586,8 +283756,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -283852,9 +284022,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &5785930926982744962
@@ -283975,9 +284145,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &5797878343307328958
@@ -284021,9 +284191,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &5806210890660800173
@@ -284191,9 +284361,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &5837226699030799673
@@ -284314,8 +284484,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -284892,10 +285062,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &5889544633174255547
@@ -285397,9 +285567,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &5918679093165649503
@@ -285532,10 +285702,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &5930036119783027238
@@ -285713,9 +285883,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &5962605908510749313
@@ -285940,9 +286110,9 @@ MonoBehaviour:
   winY: 11
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &6006750462453325315
@@ -286241,9 +286411,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &6027987568404798280
@@ -286363,8 +286533,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -286507,9 +286677,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &6060918746267129966
@@ -286630,9 +286800,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &6065275764785667709
@@ -286948,8 +287118,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -287270,8 +287440,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -287317,9 +287487,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &6086213401507494870
@@ -287362,10 +287532,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &6094007807834742940
@@ -287389,9 +287559,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &6094007807834742941
@@ -287781,8 +287951,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -288121,9 +288291,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &6142280969253042599
@@ -288744,9 +288914,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &6195368345158606480
@@ -289598,9 +289768,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &6230047082733815983
@@ -290018,9 +290188,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &6268822586268855898
@@ -290085,8 +290255,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -290599,8 +290769,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -290731,9 +290901,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &6340922995157643543
@@ -291264,10 +291434,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &6374977896303605238
@@ -291960,8 +292130,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -292416,8 +292586,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -293019,8 +293189,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -293336,9 +293506,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &6473000689429546232
@@ -293689,9 +293859,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &6497961145909009920
@@ -294084,8 +294254,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -294288,9 +294458,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &6521310570793709088
@@ -294313,10 +294483,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &6521518998939242149
@@ -295969,8 +296139,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -296107,9 +296277,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &6675284176872307710
@@ -297228,8 +297398,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -297506,9 +297676,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &6759356408869757892
@@ -297629,8 +297799,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -297987,8 +298157,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -299091,9 +299261,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &6865905254368869476
@@ -301295,9 +301465,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &6940236700693228304
@@ -301340,10 +301510,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &6942886076089479861
@@ -301931,10 +302101,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &6980740249769439707
@@ -302114,9 +302284,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7001199732474299052
@@ -302236,10 +302406,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7007077332455334070
@@ -302625,9 +302795,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &7030280008213267156
@@ -302883,9 +303053,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &7045840707226577555
@@ -302909,9 +303079,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7045840707226577556
@@ -303031,10 +303201,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &7052832830516747580
@@ -303058,9 +303228,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &7054314484877068433
@@ -303143,8 +303313,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -303593,8 +303763,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -303716,9 +303886,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &7081990031904756397
@@ -304418,8 +304588,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -305668,8 +305838,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -305740,8 +305910,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -305996,9 +306166,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7272122242937204426
@@ -306119,9 +306289,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &7277254319625533010
@@ -306367,9 +306537,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &7283831001997306458
@@ -308894,8 +309064,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -308920,8 +309090,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -309323,9 +309493,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7389726609119449123
@@ -309492,8 +309662,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -309829,9 +309999,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &7421844182736682026
@@ -310220,9 +310390,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7457540940327739621
@@ -310858,8 +311028,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -311092,10 +311262,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7504544778789875456
@@ -311275,9 +311445,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &7513713243114940802
@@ -312113,9 +312283,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &7545098389942239832
@@ -312680,9 +312850,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &7580337532397491653
@@ -313298,9 +313468,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!4 &7607354221732177864
@@ -314472,9 +314642,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7637112731716821528
@@ -314942,8 +315112,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -314968,9 +315138,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &7667739803246077688
@@ -314994,8 +315164,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -315477,9 +315647,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7680331020186769317
@@ -315758,9 +315928,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7684901525267271033
@@ -316627,9 +316797,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7719091386001658580
@@ -317115,8 +317285,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -317253,8 +317423,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -318835,8 +319005,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -319330,9 +319500,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7780403566209389325
@@ -319468,9 +319638,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7786655633102101544
@@ -319672,10 +319842,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7797674743570096212
@@ -320492,9 +320662,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7826425049889911394
@@ -322332,9 +322502,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7888791711158576198
@@ -322587,9 +322757,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!1 &7895194726692414266
@@ -323490,8 +323660,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -323901,8 +324071,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -325652,9 +325822,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &7998472853008517755
@@ -325877,9 +326047,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8002626250878205731
@@ -326499,9 +326669,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &8026374242811587042
@@ -326525,9 +326695,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &8026838162024930342
@@ -326551,9 +326721,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8026838162024930343
@@ -327590,8 +327760,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -327965,9 +328135,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &8094812578487165576
@@ -328297,8 +328467,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -329450,9 +329620,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8136638033619704742
@@ -330799,9 +330969,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &8193472305851497038
@@ -330960,8 +331130,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -331526,9 +331696,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8221115317807830791
@@ -332287,9 +332457,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &8245822450039258986
@@ -332599,9 +332769,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8252770008746297066
@@ -332722,9 +332892,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8256705074214706876
@@ -333001,9 +333171,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8260168912050470064
@@ -334908,8 +335078,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -334949,8 +335119,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -335131,9 +335301,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &8382563549727217474
@@ -335156,10 +335326,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8382563549727217475
@@ -335755,10 +335925,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &8407859621408965534
@@ -335933,8 +336103,8 @@ Transform:
   m_GameObject: {fileID: 1193077536657083177}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.68, y: -0.4, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6362854094428753025}
@@ -335955,7 +336125,7 @@ Transform:
   - {fileID: 3722349563318342535}
   - {fileID: 7995280896028551714}
   - {fileID: 6937737632574740216}
-  m_Father: {fileID: 1615326707020411721}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8436879882467588463
 SpriteRenderer:
@@ -336277,8 +336447,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -336400,9 +336570,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8445107643821693621
@@ -338200,9 +338370,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8520575146651246714
@@ -338323,8 +338493,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -338714,8 +338884,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -340295,8 +340465,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -343174,8 +343344,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -343453,8 +343623,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -343688,9 +343858,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8712441930110973420
@@ -343811,9 +343981,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8720905793266366793
@@ -344123,8 +344293,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -344501,9 +344671,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8753544180196687347
@@ -345197,8 +345367,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -345814,10 +345984,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!114 &8806655456248464670
@@ -345841,9 +346011,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8806655456248464671
@@ -348098,9 +348268,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8885475474683043811
@@ -348520,8 +348690,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -348786,8 +348956,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -348909,9 +349079,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8917912809309155009
@@ -349667,8 +349837,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -349906,10 +350076,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8959236381930956566
@@ -350186,8 +350356,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -350597,9 +350767,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8986988370393538701
@@ -350720,9 +350890,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &8992219392173658942
@@ -353066,8 +353236,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -353424,9 +353594,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!212 &9071512447496986153
@@ -353664,10 +353834,10 @@ MonoBehaviour:
   winX: 4
   winY: 6
   exitDirection: 0
-  exitDistance: 16
-  moveSpeed: 0
-  moveCooldown: 10
-  exitSpeed: 10
+  exitDistance: 4
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &9074575420949077166
@@ -353944,8 +354114,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -354067,9 +354237,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &9083173904451206410
@@ -355152,9 +355322,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &9094148883409544390
@@ -355587,9 +355757,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &9096304084630649894
@@ -356584,9 +356754,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!61 &9127387458429517447
@@ -357429,9 +357599,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &9142552973428213775
@@ -358249,9 +358419,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &9171325388771662813
@@ -358528,8 +358698,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -359113,8 +359283,8 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
+  moveSpeed: 16
+  moveCooldown: 0
   exitSpeed: 10
   swipeThreshold: 45
   moveAudio: {fileID: 0}
@@ -359379,9 +359549,9 @@ MonoBehaviour:
   winY: 6
   exitDirection: 0
   exitDistance: 4
-  moveSpeed: 8
-  moveCooldown: 0.2
-  exitSpeed: 10
+  moveSpeed: 16
+  moveCooldown: 0
+  exitSpeed: 6
   swipeThreshold: 45
   moveAudio: {fileID: 0}
 --- !u!82 &9220628288701369692
@@ -359535,6 +359705,8 @@ SceneRoots:
   - {fileID: 5435381701415281251}
   - {fileID: 5471871822102055432}
   - {fileID: 2109798003}
+  - {fileID: 8431421159396438458}
+  - {fileID: 1563711393923427845}
   - {fileID: 59793803}
   - {fileID: 877616210}
   - {fileID: 499748248}
