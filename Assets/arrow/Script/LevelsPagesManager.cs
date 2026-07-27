@@ -6,20 +6,29 @@ public class LevelsPagesManager : MonoBehaviour
     [Header("Level Pages")]
     public GameObject[] levelPanels;
 
-    [Header("Locked Panel")]
+    [Header("Stars Locked Panel")]
     public GameObject lockedPanel;
     public TMP_Text currentStarsText;
     public TMP_Text requiredStarsText;
 
+    [Header("Coming Soon Panel")]
+    public GameObject comingSoonPanel;
+
     [Header("Unlock Settings")]
     public int[] starsRequiredForPages;
 
-    private int currentPage = 0;
+    [Tooltip("Кількість глав, які вже доступні у грі")]
+    public int availablePagesCount = 2;
+
+    private int currentPage;
 
     private void Start()
     {
         if (lockedPanel != null)
             lockedPanel.SetActive(false);
+
+        if (comingSoonPanel != null)
+            comingSoonPanel.SetActive(false);
 
         for (int i = 0; i < levelPanels.Length; i++)
         {
@@ -41,6 +50,14 @@ public class LevelsPagesManager : MonoBehaviour
         if (nextPage >= levelPanels.Length)
             return;
 
+        // Глава ще не додана в гру
+        if (nextPage >= availablePagesCount)
+        {
+            ShowComingSoonPanel();
+            return;
+        }
+
+        // Глава доступна, але може вимагати зірки
         if (CanOpenPage(nextPage))
         {
             ShowPage(nextPage);
@@ -67,6 +84,12 @@ public class LevelsPagesManager : MonoBehaviour
             lockedPanel.SetActive(false);
     }
 
+    public void CloseComingSoonPanel()
+    {
+        if (comingSoonPanel != null)
+            comingSoonPanel.SetActive(false);
+    }
+
     private void ShowPage(int pageIndex)
     {
         currentPage = pageIndex;
@@ -83,8 +106,11 @@ public class LevelsPagesManager : MonoBehaviour
         if (pageIndex <= 0)
             return true;
 
-        if (starsRequiredForPages == null || pageIndex >= starsRequiredForPages.Length)
+        if (starsRequiredForPages == null ||
+            pageIndex >= starsRequiredForPages.Length)
+        {
             return true;
+        }
 
         int requiredStars = starsRequiredForPages[pageIndex];
         int totalStars = GetTotalStars();
@@ -96,8 +122,12 @@ public class LevelsPagesManager : MonoBehaviour
     {
         int requiredStars = 0;
 
-        if (starsRequiredForPages != null && pageIndex < starsRequiredForPages.Length)
+        if (starsRequiredForPages != null &&
+            pageIndex >= 0 &&
+            pageIndex < starsRequiredForPages.Length)
+        {
             requiredStars = starsRequiredForPages[pageIndex];
+        }
 
         int totalStars = GetTotalStars();
 
@@ -111,6 +141,15 @@ public class LevelsPagesManager : MonoBehaviour
         {
             lockedPanel.SetActive(true);
             lockedPanel.transform.SetAsLastSibling();
+        }
+    }
+
+    private void ShowComingSoonPanel()
+    {
+        if (comingSoonPanel != null)
+        {
+            comingSoonPanel.SetActive(true);
+            comingSoonPanel.transform.SetAsLastSibling();
         }
     }
 
