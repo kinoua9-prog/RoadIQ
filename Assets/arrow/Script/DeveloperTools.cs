@@ -12,15 +12,11 @@ public class DeveloperTools : MonoBehaviour
             PlayerPrefs.DeleteKey("LevelStars_" + i);
         }
 
-        // Вибрані локації
         PlayerPrefs.DeleteKey("SelectedCityLocation");
         PlayerPrefs.DeleteKey("SelectedMallLocation");
 
-        // Куплені City
         PlayerPrefs.DeleteKey("Bought_CityNight");
         PlayerPrefs.DeleteKey("Bought_CityWinter");
-
-        // Куплені Mall
         PlayerPrefs.DeleteKey("Bought_MallNight");
         PlayerPrefs.DeleteKey("Bought_MallWinter");
 
@@ -29,10 +25,40 @@ public class DeveloperTools : MonoBehaviour
         if (WalletManager.Instance != null)
             WalletManager.Instance.UpdateCoinsText();
 
-        LocationShopManager shop = FindFirstObjectByType<LocationShopManager>();
+        LocationShopManager shop =
+            FindFirstObjectByType<LocationShopManager>();
+
         if (shop != null)
             shop.RefreshButtons();
 
         Debug.Log("Coins, Stars and Locations Reset");
+    }
+
+    public void ResetDisableEnergy()
+    {
+        PurchaseState.DisableEnergy = false;
+
+        if (EnergyManager.Instance != null)
+            EnergyManager.Instance.RefreshUI();
+
+        Debug.Log("DisableEnergy reset to FALSE");
+    }
+
+    public void ResetRemoveAds()
+    {
+        PurchaseState.RemoveAds = false;
+
+        Debug.Log("RemoveAds reset to FALSE");
+    }
+
+    public void ResetAllPurchasesForTesting()
+    {
+        PurchaseState.DisableEnergy = false;
+        PurchaseState.RemoveAds = false;
+
+        if (EnergyManager.Instance != null)
+            EnergyManager.Instance.RefreshUI();
+
+        Debug.Log("All local purchase states reset for testing");
     }
 }

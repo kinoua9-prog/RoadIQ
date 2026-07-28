@@ -36,6 +36,11 @@ public class EnergyManager : MonoBehaviour
 
         if (noEnergyPanel != null)
             noEnergyPanel.SetActive(false);
+
+        Debug.Log(
+            "ENERGY START | Energy: " + currentEnergy + "/" + maxEnergy +
+            " | DisableEnergy: " + PurchaseState.DisableEnergy
+        );
     }
 
     private void Update()
@@ -50,16 +55,26 @@ public class EnergyManager : MonoBehaviour
         UpdateTimer();
     }
 
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
+
     public bool TryUseEnergy()
     {
         if (PurchaseState.DisableEnergy)
+        {
+            Debug.Log("ENERGY: Unlimited energy enabled.");
             return true;
+        }
 
         RestoreEnergyByTime();
 
         if (currentEnergy <= 0)
         {
             ShowNoEnergyPanel();
+            Debug.Log("ENERGY: Not enough energy.");
             return false;
         }
 
@@ -68,16 +83,26 @@ public class EnergyManager : MonoBehaviour
         SaveEnergy();
         UpdateUI();
 
+        Debug.Log(
+            "ENERGY USED | Current: " +
+            currentEnergy + "/" + maxEnergy
+        );
+
         return true;
     }
 
     private void LoadEnergy()
     {
         currentEnergy = PlayerPrefs.GetInt(EnergyKey, maxEnergy);
+        currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
 
         if (!PlayerPrefs.HasKey(LastEnergyTimeKey))
         {
-            PlayerPrefs.SetString(LastEnergyTimeKey, DateTime.Now.ToString());
+            PlayerPrefs.SetString(
+                LastEnergyTimeKey,
+                DateTime.Now.ToString("O")
+            );
+
             PlayerPrefs.Save();
         }
     }
@@ -85,49 +110,79 @@ public class EnergyManager : MonoBehaviour
     private void SaveEnergy()
     {
         PlayerPrefs.SetInt(EnergyKey, currentEnergy);
-        PlayerPrefs.SetString(LastEnergyTimeKey, DateTime.Now.ToString());
+
+        PlayerPrefs.SetString(
+            LastEnergyTimeKey,
+            DateTime.Now.ToString("O")
+        );
+
         PlayerPrefs.Save();
     }
 
     private void RestoreEnergyByTime()
     {
+        if (PurchaseState.DisableEnergy)
+            return;
+
         if (currentEnergy >= maxEnergy)
             return;
 
-        string savedTime = PlayerPrefs.GetString(LastEnergyTimeKey, DateTime.Now.ToString());
+        string savedTime = PlayerPrefs.GetString(
+            LastEnergyTimeKey,
+            DateTime.Now.ToString("O")
+        );
 
         if (!DateTime.TryParse(savedTime, out DateTime lastTime))
             lastTime = DateTime.Now;
 
         TimeSpan timePassed = DateTime.Now - lastTime;
-        int energyToAdd = (int)(timePassed.TotalMinutes / restoreMinutes);
 
-        if (energyToAdd > 0)
-        {
-            currentEnergy += energyToAdd;
+        int energyToAdd =
+            (int)(timePassed.TotalMinutes / restoreMinutes);
 
-            if (currentEnergy > maxEnergy)
-                currentEnergy = maxEnergy;
+        if (energyToAdd <= 0)
+            return;
 
-            DateTime newLastTime = lastTime.AddMinutes(energyToAdd * restoreMinutes);
+        currentEnergy += energyToAdd;
+        currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
 
-            PlayerPrefs.SetInt(EnergyKey, currentEnergy);
-            PlayerPrefs.SetString(LastEnergyTimeKey, newLastTime.ToString());
-            PlayerPrefs.Save();
+        DateTime newLastTime =
+            lastTime.AddMinutes(energyToAdd * restoreMinutes);
 
-            UpdateUI();
-        }
+        if (currentEnergy >= maxEnergy)
+            newLastTime = DateTime.Now;
+
+        PlayerPrefs.SetInt(EnergyKey, currentEnergy);
+
+        PlayerPrefs.SetString(
+            LastEnergyTimeKey,
+            newLastTime.ToString("O")
+        );
+
+        PlayerPrefs.Save();
+
+        UpdateUI();
+
+        Debug.Log(
+            "ENERGY RESTORED | Added: " + energyToAdd +
+            " | Current: " + currentEnergy + "/" + maxEnergy
+        );
     }
 
     private void UpdateUI()
     {
-        if (energyRoot != null)
-            energyRoot.SetActive(!PurchaseState.DisableEnergy);
+        bool disableEnergy = PurchaseState.DisableEnergy;
 
-        if (PurchaseState.DisableEnergy)
+        if (energyRoot != null)
+            energyRoot.SetActive(!disableEnergy);
+
+        if (disableEnergy)
         {
             if (timerText != null)
                 timerText.text = "";
+
+            if (noEnergyTimerText != null)
+                noEnergyTimerText.text = "";
 
             if (noEnergyPanel != null)
                 noEnergyPanel.SetActive(false);
@@ -138,10 +193,13 @@ public class EnergyManager : MonoBehaviour
         if (energyText != null)
             energyText.text = currentEnergy + "/" + maxEnergy;
 
-        for (int i = 0; i < energyIcons.Length; i++)
+        if (energyIcons != null)
         {
-            if (energyIcons[i] != null)
-                energyIcons[i].SetActive(i < currentEnergy);
+            for (int i = 0; i < energyIcons.Length; i++)
+            {
+                if (energyIcons[i] != null)
+                    energyIcons[i].SetActive(i < currentEnergy);
+            }
         }
 
         UpdateTimer();
@@ -153,18 +211,31 @@ public class EnergyManager : MonoBehaviour
 
         if (!PurchaseState.DisableEnergy && currentEnergy < maxEnergy)
         {
-            string savedTime = PlayerPrefs.GetString(LastEnergyTimeKey, DateTime.Now.ToString());
+            string savedTime = PlayerPrefs.GetString(
+                LastEnergyTimeKey,
+                DateTime.Now.ToString("O")
+            );
 
             if (!DateTime.TryParse(savedTime, out DateTime lastTime))
                 lastTime = DateTime.Now;
 
-            DateTime nextRestoreTime = lastTime.AddMinutes(restoreMinutes);
-            TimeSpan remaining = nextRestoreTime - DateTime.Now;
+            DateTime nextRestoreTime =
+                lastTime.AddMinutes(restoreMinutes);
+
+            TimeSpan remaining =
+                nextRestoreTime - DateTime.Now;
 
             if (remaining.TotalSeconds < 0)
                 remaining = TimeSpan.Zero;
 
-            timeText = string.Format("{0:00}:{1:00}", remaining.Minutes, remaining.Seconds);
+            int minutes = Mathf.Max(0, (int)remaining.TotalMinutes);
+            int seconds = Mathf.Max(0, remaining.Seconds);
+
+            timeText = string.Format(
+                "{0:00}:{1:00}",
+                minutes,
+                seconds
+            );
         }
 
         if (timerText != null)
@@ -197,15 +268,45 @@ public class EnergyManager : MonoBehaviour
             return;
 
         currentEnergy += amount;
-
-        if (currentEnergy > maxEnergy)
-            currentEnergy = maxEnergy;
+        currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
 
         SaveEnergy();
         UpdateUI();
+
+        Debug.Log(
+            "ENERGY ADDED | Current: " +
+            currentEnergy + "/" + maxEnergy
+        );
     }
+
     public void RefreshUI()
     {
+        LoadEnergy();
+        RestoreEnergyByTime();
         UpdateUI();
+    }
+
+    public int GetCurrentEnergy()
+    {
+        RestoreEnergyByTime();
+        return currentEnergy;
+    }
+
+    public void ResetEnergyForTesting()
+    {
+        PurchaseState.DisableEnergy = false;
+
+        currentEnergy = maxEnergy;
+
+        PlayerPrefs.SetInt(EnergyKey, currentEnergy);
+        PlayerPrefs.SetString(
+            LastEnergyTimeKey,
+            DateTime.Now.ToString("O")
+        );
+
+        PlayerPrefs.Save();
+        UpdateUI();
+
+        Debug.Log("ENERGY TEST RESET: 5/5");
     }
 }
