@@ -6,9 +6,14 @@ public class AdsManager : MonoBehaviour
 {
     public static AdsManager Instance;
 
-    [Header("Test Ad Unit IDs")]
-    [SerializeField] private string rewardedAdUnitId = "ca-app-pub-3940256099942544/5224354917";
-    [SerializeField] private string interstitialAdUnitId = "ca-app-pub-3940256099942544/1033173712";
+    [Header("Production Ad Unit IDs")]
+    [SerializeField]
+    private string rewardedAdUnitId =
+        "ca-app-pub-5183235188513724/8666522729";
+
+    [SerializeField]
+    private string interstitialAdUnitId =
+        "ca-app-pub-5183235188513724/2140642821";
 
     [Header("Interstitial Frequency")]
     [SerializeField] private int minLevelsBetweenAds = 5;
@@ -17,14 +22,18 @@ public class AdsManager : MonoBehaviour
     private RewardedAd rewardedAd;
     private InterstitialAd interstitialAd;
 
-    private Action pendingRewardAction;
+    private bool rewardedAdIsShowing;
+    private bool interstitialAdIsShowing;
 
-    private const string LevelsSinceInterstitialKey = "LevelsSinceInterstitial";
-    private const string NextInterstitialAfterKey = "NextInterstitialAfter";
+    private const string LevelsSinceInterstitialKey =
+        "LevelsSinceInterstitial";
+
+    private const string NextInterstitialAfterKey =
+        "NextInterstitialAfter";
 
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -41,182 +50,512 @@ public class AdsManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("ADS: Initializing Mobile Ads...");
+
+        // Події реклами виконуватимуться в головному потоці Unity.
+        // Це важливо для WalletManager, EnergyManager та UI.
+        MobileAds.RaiseAdEventsOnUnityMainThread = true;
+
         MobileAds.Initialize(initStatus =>
         {
+            Debug.Log("ADS: Mobile Ads initialized.");
+
             LoadRewardedAd();
             LoadInterstitialAd();
         });
     }
 
-    // ================= REWARDED =================
-
-    public void LoadRewardedAd()
+    private void OnDestroy()
     {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+
         if (rewardedAd != null)
         {
             rewardedAd.Destroy();
             rewardedAd = null;
         }
 
+        if (interstitialAd != null)
+        {
+            interstitialAd.Destroy();
+            interstitialAd = null;
+        }
+    }
+
+    // =========================================================
+    // REWARDED AD
+    // =========================================================
+
+    public void LoadRewardedAd()
+    {
+        if (rewardedAdIsShowing)
+        {
+            return;
+        }
+
+        if (rewardedAd != null)
+        {
+            rewardedAd.Destroy();
+            rewardedAd = null;
+        }
+
+        Debug.Log("ADS: Loading rewarded ad...");
+
         AdRequest request = new AdRequest();
 
-        RewardedAd.Load(rewardedAdUnitId, request, (RewardedAd ad, LoadAdError error) =>
-        {
-            if (error != null || ad == null)
+        RewardedAd.Load(
+            rewardedAdUnitId,
+            request,
+            (RewardedAd loadedAd, LoadAdError error) =>
             {
-                Debug.LogError("Rewarded failed to load: " + error);
+                if (error != null || loadedAd == null)
+                {
+                    Debug.LogError(
+                        "ADS: Rewarded failed to load: " + error
+                    );
+
+                    rewardedAd = null;
+                    return;
+                }
+
+                rewardedAd = loadedAd;
+
+                Debug.Log("ADS: Rewarded loaded.");
+
+                loadedAd.OnAdFullScreenContentOpened += () =>
+                {
+                    rewardedAdIsShowing = true;
+
+                    Debug.Log(
+                        "ADS: Rewarded fullscreen opened."
+                    );
+                };
+
+                loadedAd.OnAdFullScreenContentClosed += () =>
+                {
+                    Debug.Log(
+                        "ADS: Rewarded closed. Loading next..."
+                    );
+
+                    rewardedAdIsShowing = false;
+
+                    loadedAd.Destroy();
+
+                    if (rewardedAd == loadedAd)
+                    {
+                        rewardedAd = null;
+                    }
+
+                    LoadRewardedAd();
+                };
+
+                loadedAd.OnAdFullScreenContentFailed +=
+                    (AdError adError) =>
+                    {
+                        Debug.LogError(
+                            "ADS: Rewarded fullscreen failed: " +
+                            adError
+                        );
+
+                        rewardedAdIsShowing = false;
+
+                        loadedAd.Destroy();
+
+                        if (rewardedAd == loadedAd)
+                        {
+                            rewardedAd = null;
+                        }
+
+                        LoadRewardedAd();
+                    };
+            }
+        );
+    }
+
+    // Нагорода: 10 монет
+    public void ShowRewardedAd()
+    {
+        ShowRewardedAdWithAction(() =>
+        {
+            if (WalletManager.Instance == null)
+            {
+                Debug.LogError(
+                    "ADS REWARD FAILED: WalletManager.Instance is null."
+                );
+
                 return;
             }
 
-            rewardedAd = ad;
-            Debug.Log("Rewarded loaded.");
+            WalletManager.Instance.AddCoins(10);
 
-            rewardedAd.OnAdFullScreenContentClosed += () =>
-            {
-                Debug.Log("Rewarded ad closed. Loading next...");
-                LoadRewardedAd();
-            };
-
-            rewardedAd.OnAdFullScreenContentFailed += (AdError adError) =>
-            {
-                Debug.LogError("Rewarded fullscreen failed: " + adError);
-                LoadRewardedAd();
-            };
+            Debug.Log(
+                "ADS REWARD SUCCESS: Added 10 coins."
+            );
         });
     }
 
-    public void ShowRewardedAd()
-    {
-        ShowRewardedAd(() =>
-        {
-            if (WalletManager.Instance != null)
-                WalletManager.Instance.AddCoins(10);
-        });
-    }
-
+    // Нагорода: 1 енергія
     public void ShowRewardedAdForEnergy()
     {
-        ShowRewardedAd(() =>
+        ShowRewardedAdWithAction(() =>
         {
-            if (EnergyManager.Instance != null)
-                EnergyManager.Instance.AddEnergy(1);
+            if (EnergyManager.Instance == null)
+            {
+                Debug.LogError(
+                    "ADS REWARD FAILED: EnergyManager.Instance is null."
+                );
+
+                return;
+            }
+
+            EnergyManager.Instance.AddEnergy(1);
+            EnergyManager.Instance.RefreshUI();
+            EnergyManager.Instance.CloseNoEnergyPanel();
+
+            Debug.Log(
+                "ADS REWARD SUCCESS: Added 1 energy."
+            );
         });
     }
 
-    public void ShowRewardedAd(Action rewardAction)
+    private void ShowRewardedAdWithAction(Action rewardAction)
     {
-        pendingRewardAction = rewardAction;
+        if (rewardedAdIsShowing)
+        {
+            Debug.LogWarning(
+                "ADS: Rewarded ad is already showing."
+            );
 
-        if (rewardedAd != null && rewardedAd.CanShowAd())
-        {
-            rewardedAd.Show(reward =>
-            {
-                Debug.Log("Reward earned.");
-                pendingRewardAction?.Invoke();
-                pendingRewardAction = null;
-            });
+            return;
         }
-        else
+
+        if (rewardAction == null)
         {
-            Debug.Log("Rewarded ad is not ready.");
-            pendingRewardAction = null;
+            Debug.LogError(
+                "ADS: Reward action is null."
+            );
+
+            return;
+        }
+
+        if (rewardedAd == null || !rewardedAd.CanShowAd())
+        {
+            Debug.LogWarning(
+                "ADS: Rewarded ad is not ready."
+            );
+
+            rewardedAdIsShowing = false;
             LoadRewardedAd();
+            return;
         }
+
+        RewardedAd adToShow = rewardedAd;
+
+        rewardedAd = null;
+        rewardedAdIsShowing = true;
+
+        bool rewardWasGranted = false;
+
+        Debug.Log("ADS: Showing rewarded ad.");
+
+        adToShow.Show(reward =>
+        {
+            if (rewardWasGranted)
+            {
+                Debug.LogWarning(
+                    "ADS: Reward callback was already executed."
+                );
+
+                return;
+            }
+
+            rewardWasGranted = true;
+
+            Debug.Log(
+                "ADS: Reward earned. Type: " +
+                reward.Type +
+                ", Amount: " +
+                reward.Amount
+            );
+
+            try
+            {
+                rewardAction.Invoke();
+
+                Debug.Log(
+                    "ADS: Reward action completed successfully."
+                );
+            }
+            catch (Exception exception)
+            {
+                Debug.LogError(
+                    "ADS: Reward action exception: " +
+                    exception
+                );
+            }
+        });
     }
 
-    // ================= INTERSTITIAL =================
+    // =========================================================
+    // INTERSTITIAL AD
+    // =========================================================
 
     public void LoadInterstitialAd()
     {
+        if (interstitialAdIsShowing)
+        {
+            return;
+        }
+
         if (interstitialAd != null)
         {
             interstitialAd.Destroy();
             interstitialAd = null;
         }
 
+        Debug.Log("ADS: Loading interstitial ad...");
+
         AdRequest request = new AdRequest();
 
-        InterstitialAd.Load(interstitialAdUnitId, request, (InterstitialAd ad, LoadAdError error) =>
-        {
-            if (error != null || ad == null)
+        InterstitialAd.Load(
+            interstitialAdUnitId,
+            request,
+            (InterstitialAd loadedAd, LoadAdError error) =>
             {
-                Debug.LogError("Interstitial failed to load: " + error);
-                return;
+                if (error != null || loadedAd == null)
+                {
+                    Debug.LogError(
+                        "ADS: Interstitial failed to load: " +
+                        error
+                    );
+
+                    interstitialAd = null;
+                    return;
+                }
+
+                interstitialAd = loadedAd;
+
+                Debug.Log("ADS: Interstitial loaded.");
+
+                loadedAd.OnAdFullScreenContentOpened += () =>
+                {
+                    interstitialAdIsShowing = true;
+
+                    Debug.Log(
+                        "ADS: Interstitial fullscreen opened."
+                    );
+                };
+
+                loadedAd.OnAdFullScreenContentClosed += () =>
+                {
+                    Debug.Log(
+                        "ADS: Interstitial closed. Loading next..."
+                    );
+
+                    interstitialAdIsShowing = false;
+
+                    loadedAd.Destroy();
+
+                    if (interstitialAd == loadedAd)
+                    {
+                        interstitialAd = null;
+                    }
+
+                    LoadInterstitialAd();
+                };
+
+                loadedAd.OnAdFullScreenContentFailed +=
+                    (AdError adError) =>
+                    {
+                        Debug.LogError(
+                            "ADS: Interstitial fullscreen failed: " +
+                            adError
+                        );
+
+                        interstitialAdIsShowing = false;
+
+                        loadedAd.Destroy();
+
+                        if (interstitialAd == loadedAd)
+                        {
+                            interstitialAd = null;
+                        }
+
+                        LoadInterstitialAd();
+                    };
             }
-
-            interstitialAd = ad;
-            Debug.Log("Interstitial loaded.");
-
-            interstitialAd.OnAdFullScreenContentClosed += () =>
-            {
-                Debug.Log("Interstitial closed. Loading next...");
-                LoadInterstitialAd();
-            };
-
-            interstitialAd.OnAdFullScreenContentFailed += (AdError adError) =>
-            {
-                Debug.LogError("Interstitial fullscreen failed: " + adError);
-                LoadInterstitialAd();
-            };
-        });
+        );
     }
 
     public void ShowInterstitialAd()
     {
-        if (PurchaseState.RemoveAds)
-        {
-            Debug.Log("Interstitial skipped: Remove Ads purchased.");
-            return;
-        }
-
-        if (interstitialAd != null && interstitialAd.CanShowAd())
-        {
-            interstitialAd.Show();
-        }
-        else
-        {
-            Debug.Log("Interstitial ad is not ready.");
-            LoadInterstitialAd();
-        }
+        ShowInterstitialAd(null);
     }
 
-    public void TryShowRandomInterstitialAfterLevel()
+    public void ShowInterstitialAd(Action onFinished)
     {
         if (PurchaseState.RemoveAds)
         {
-            Debug.Log("Random interstitial skipped: Remove Ads purchased.");
+            Debug.Log(
+                "ADS: Interstitial skipped because Remove Ads is purchased."
+            );
+
+            onFinished?.Invoke();
             return;
         }
 
-        int levelsSinceAd = PlayerPrefs.GetInt(LevelsSinceInterstitialKey, 0);
-        int nextAdAfter = PlayerPrefs.GetInt(NextInterstitialAfterKey, 7);
+        if (interstitialAdIsShowing)
+        {
+            Debug.LogWarning(
+                "ADS: Interstitial is already showing."
+            );
+
+            onFinished?.Invoke();
+            return;
+        }
+
+        if (interstitialAd == null ||
+            !interstitialAd.CanShowAd())
+        {
+            Debug.LogWarning(
+                "ADS: Interstitial is not ready. Continuing without ad."
+            );
+
+            LoadInterstitialAd();
+            onFinished?.Invoke();
+            return;
+        }
+
+        InterstitialAd adToShow = interstitialAd;
+
+        interstitialAd = null;
+        interstitialAdIsShowing = true;
+
+        bool continuationCalled = false;
+
+        void ContinueOnce()
+        {
+            if (continuationCalled)
+                return;
+
+            continuationCalled = true;
+            onFinished?.Invoke();
+        }
+
+        adToShow.OnAdFullScreenContentClosed += () =>
+        {
+            Debug.Log(
+                "ADS: Interstitial closed."
+            );
+
+            interstitialAdIsShowing = false;
+
+            adToShow.Destroy();
+            LoadInterstitialAd();
+
+            ContinueOnce();
+        };
+
+        adToShow.OnAdFullScreenContentFailed +=
+            (AdError adError) =>
+            {
+                Debug.LogError(
+                    "ADS: Interstitial failed to show: " +
+                    adError
+                );
+
+                interstitialAdIsShowing = false;
+
+                adToShow.Destroy();
+                LoadInterstitialAd();
+
+                ContinueOnce();
+            };
+
+        Debug.Log("ADS: Showing interstitial.");
+
+        adToShow.Show();
+    }
+
+    public void TryShowRandomInterstitialAfterAction(Action continueAction)
+    {
+        if (PurchaseState.RemoveAds)
+        {
+            Debug.Log(
+                "ADS: Interstitial skipped because Remove Ads is purchased."
+            );
+
+            continueAction?.Invoke();
+            return;
+        }
+
+        int levelsSinceAd = PlayerPrefs.GetInt(
+            LevelsSinceInterstitialKey,
+            0
+        );
+
+        int nextAdAfter = PlayerPrefs.GetInt(
+            NextInterstitialAfterKey,
+            7
+        );
 
         levelsSinceAd++;
 
-        Debug.Log("Interstitial counter: " + levelsSinceAd + "/" + nextAdAfter);
+        Debug.Log(
+            "ADS: Interstitial counter: " +
+            levelsSinceAd +
+            "/" +
+            nextAdAfter
+        );
 
-        if (levelsSinceAd >= nextAdAfter)
+        if (levelsSinceAd < nextAdAfter)
         {
-            levelsSinceAd = 0;
-            PlayerPrefs.SetInt(LevelsSinceInterstitialKey, levelsSinceAd);
-            SetNextInterstitialTarget();
+            PlayerPrefs.SetInt(
+                LevelsSinceInterstitialKey,
+                levelsSinceAd
+            );
 
-            ShowInterstitialAd();
-        }
-        else
-        {
-            PlayerPrefs.SetInt(LevelsSinceInterstitialKey, levelsSinceAd);
             PlayerPrefs.Save();
+
+            continueAction?.Invoke();
+            return;
         }
+
+        PlayerPrefs.SetInt(
+            LevelsSinceInterstitialKey,
+            0
+        );
+
+        SetNextInterstitialTarget();
+        PlayerPrefs.Save();
+
+        ShowInterstitialAd(continueAction);
     }
 
     private void SetNextInterstitialTarget()
     {
-        int next = UnityEngine.Random.Range(minLevelsBetweenAds, maxLevelsBetweenAds + 1);
+        int minimum = Mathf.Max(1, minLevelsBetweenAds);
+        int maximum = Mathf.Max(minimum, maxLevelsBetweenAds);
 
-        PlayerPrefs.SetInt(NextInterstitialAfterKey, next);
+        int next = UnityEngine.Random.Range(
+            minimum,
+            maximum + 1
+        );
+
+        PlayerPrefs.SetInt(
+            NextInterstitialAfterKey,
+            next
+        );
+
         PlayerPrefs.Save();
 
-        Debug.Log("Next interstitial after " + next + " completed levels.");
+        Debug.Log(
+            "ADS: Next interstitial after " +
+            next +
+            " completed levels."
+        );
     }
 }

@@ -1,6 +1,6 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class LoseManager : MonoBehaviour
 {
@@ -9,6 +9,8 @@ public class LoseManager : MonoBehaviour
     public GameObject losePanel;
     public TMP_Text loseTimeText;
 
+    private bool transitionStarted;
+
     private void Awake()
     {
         Instance = this;
@@ -16,34 +18,75 @@ public class LoseManager : MonoBehaviour
 
     private void Start()
     {
+        transitionStarted = false;
+
         if (losePanel != null)
             losePanel.SetActive(false);
     }
 
     public void ShowLosePanel()
     {
-        // Блокуємо рух машин
         if (MovesManager.Instance != null)
             MovesManager.Instance.gameOver = true;
 
-        // Зупиняємо таймер
         if (LevelTimer.Instance != null)
         {
             LevelTimer.Instance.StopTimer();
 
             if (loseTimeText != null)
-                loseTimeText.text = LevelTimer.Instance.GetTimeText();
+            {
+                loseTimeText.text =
+                    LevelTimer.Instance.GetTimeText();
+            }
         }
 
-        // Показуємо панель програшу
         if (losePanel != null)
             losePanel.SetActive(true);
 
-        // Ставимо гру на паузу
         Time.timeScale = 0f;
     }
 
     public void RestartLevel()
+    {
+        if (transitionStarted)
+            return;
+
+        transitionStarted = true;
+        Time.timeScale = 1f;
+
+        if (AdsManager.Instance != null)
+        {
+            AdsManager.Instance
+                .TryShowRandomInterstitialAfterAction(
+                    LoadGameScene
+                );
+        }
+        else
+        {
+            Debug.LogWarning(
+                "LOSE: AdsManager.Instance не знайдений. " +
+                "Рівень перезапускається без реклами."
+            );
+
+            LoadGameScene();
+        }
+    }
+
+    public void OpenMenu()
+    {
+        if (transitionStarted)
+            return;
+
+        transitionStarted = true;
+        Time.timeScale = 1f;
+
+        if (MovesManager.Instance != null)
+            MovesManager.Instance.gameOver = false;
+
+        SceneManager.LoadScene("MainMenuScene");
+    }
+
+    private void LoadGameScene()
     {
         Time.timeScale = 1f;
 
@@ -51,15 +94,5 @@ public class LoseManager : MonoBehaviour
             MovesManager.Instance.gameOver = false;
 
         SceneManager.LoadScene("GameScene");
-    }
-
-    public void OpenMenu()
-    {
-        Time.timeScale = 1f;
-
-        if (MovesManager.Instance != null)
-            MovesManager.Instance.gameOver = false;
-
-        SceneManager.LoadScene("MainMenuScene");
     }
 }

@@ -20,6 +20,8 @@ public class WinManager : MonoBehaviour
     [Header("Sound")]
     public AudioSource winSound;
 
+    private bool transitionStarted;
+
     private void Awake()
     {
         Instance = this;
@@ -28,6 +30,7 @@ public class WinManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
+        transitionStarted = false;
 
         if (winPanel != null)
             winPanel.SetActive(false);
@@ -46,20 +49,37 @@ public class WinManager : MonoBehaviour
             LevelTimer.Instance.StopTimer();
 
             if (winTimeText != null)
-                winTimeText.text = LevelTimer.Instance.GetTimeText();
+                winTimeText.text =
+                    LevelTimer.Instance.GetTimeText();
         }
 
-        int used = MovesManager.Instance.usedMoves;
+        int used = 0;
 
-        LevelSettings levelSettings = FindFirstObjectByType<LevelSettings>();
+        if (MovesManager.Instance != null)
+        {
+            used = MovesManager.Instance.usedMoves;
+            MovesManager.Instance.gameOver = true;
+        }
+        else
+        {
+            Debug.LogError(
+                "WIN: MovesManager.Instance не знайдений!"
+            );
+        }
+
+        LevelSettings levelSettings =
+            FindFirstObjectByType<LevelSettings>();
 
         int threeStarMoves = 15;
         int twoStarMoves = 25;
 
         if (levelSettings != null)
         {
-            threeStarMoves = levelSettings.threeStarMoves;
-            twoStarMoves = levelSettings.twoStarMoves;
+            threeStarMoves =
+                levelSettings.threeStarMoves;
+
+            twoStarMoves =
+                levelSettings.twoStarMoves;
         }
 
         int stars = 1;
@@ -91,19 +111,36 @@ public class WinManager : MonoBehaviour
 
     private int GiveCoinsForStars(int newStars)
     {
-        int currentLevel = PlayerPrefs.GetInt("SelectedLevel", 1);
+        int currentLevel = PlayerPrefs.GetInt(
+            "SelectedLevel",
+            1
+        );
 
-        string starsKey = "Level_" + currentLevel + "_Stars";
+        string starsKey =
+            "Level_" + currentLevel + "_Stars";
 
-        int oldStars = PlayerPrefs.GetInt(starsKey, 0);
+        int oldStars = PlayerPrefs.GetInt(
+            starsKey,
+            0
+        );
 
         if (newStars <= oldStars)
             return 0;
 
-        int reward = GetRewardByStars(newStars) - GetRewardByStars(oldStars);
+        int reward =
+            GetRewardByStars(newStars) -
+            GetRewardByStars(oldStars);
 
         if (WalletManager.Instance != null)
+        {
             WalletManager.Instance.AddCoins(reward);
+        }
+        else
+        {
+            Debug.LogError(
+                "WIN: WalletManager.Instance не знайдений!"
+            );
+        }
 
         PlayerPrefs.SetInt(starsKey, newStars);
         PlayerPrefs.Save();
@@ -131,40 +168,109 @@ public class WinManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        if (transitionStarted)
+            return;
+
         if (EnergyManager.Instance != null)
         {
             if (!EnergyManager.Instance.TryUseEnergy())
+            {
+                EnergyManager.Instance.ShowNoEnergyPanel();
                 return;
+            }
         }
 
+        transitionStarted = true;
         Time.timeScale = 1f;
-        SceneManager.LoadScene("GameScene");
+
+        ShowPossibleInterstitialAndLoadGame();
     }
 
     public void OpenMenu()
     {
+        if (transitionStarted)
+            return;
+
+        transitionStarted = true;
         Time.timeScale = 1f;
+
+        if (MovesManager.Instance != null)
+            MovesManager.Instance.gameOver = false;
+
         SceneManager.LoadScene("MainMenuScene");
     }
 
     public void NextLevel()
     {
-        if (EnergyManager.Instance != null)
+        if (transitionStarted)
+            return;
+
+        if (EnergyManager.Instance == null)
         {
-            if (!EnergyManager.Instance.TryUseEnergy())
-                return;
+            Debug.LogError(
+                "NEXT LEVEL: EnergyManager.Instance не знайдений!"
+            );
+
+            return;
         }
 
+        if (!EnergyManager.Instance.TryUseEnergy())
+        {
+            EnergyManager.Instance.ShowNoEnergyPanel();
+
+            Debug.Log(
+                "NEXT LEVEL: Енергії немає."
+            );
+
+            return;
+        }
+
+        transitionStarted = true;
         Time.timeScale = 1f;
 
-        int currentLevel = PlayerPrefs.GetInt("SelectedLevel", 1);
+        int currentLevel = PlayerPrefs.GetInt(
+            "SelectedLevel",
+            1
+        );
+
         currentLevel++;
 
-        PlayerPrefs.SetInt("SelectedLevel", currentLevel);
+        PlayerPrefs.SetInt(
+            "SelectedLevel",
+            currentLevel
+        );
+
         PlayerPrefs.Save();
 
+        ShowPossibleInterstitialAndLoadGame();
+    }
+
+    private void ShowPossibleInterstitialAndLoadGame()
+    {
         if (AdsManager.Instance != null)
-            AdsManager.Instance.TryShowRandomInterstitialAfterLevel();
+        {
+            AdsManager.Instance
+                .TryShowRandomInterstitialAfterAction(
+                    LoadGameScene
+                );
+        }
+        else
+        {
+            Debug.LogWarning(
+                "WIN: AdsManager.Instance не знайдений. " +
+                "Сцена відкривається без реклами."
+            );
+
+            LoadGameScene();
+        }
+    }
+
+    private void LoadGameScene()
+    {
+        Time.timeScale = 1f;
+
+        if (MovesManager.Instance != null)
+            MovesManager.Instance.gameOver = false;
 
         SceneManager.LoadScene("GameScene");
     }

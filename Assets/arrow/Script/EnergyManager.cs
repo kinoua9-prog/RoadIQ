@@ -45,6 +45,12 @@ public class EnergyManager : MonoBehaviour
 
     private void Update()
     {
+        // ГОЛОВНА ЗМІНА:
+        // якщо інший код вимкнув EnergyRoot,
+        // цей скрипт знову його ввімкне.
+        if (energyRoot != null && !energyRoot.activeSelf)
+            energyRoot.SetActive(true);
+
         if (PurchaseState.DisableEnergy)
         {
             UpdateUI();
@@ -173,11 +179,25 @@ public class EnergyManager : MonoBehaviour
     {
         bool disableEnergy = PurchaseState.DisableEnergy;
 
+        // ГОЛОВНА ЗМІНА:
+        // більше ніколи не ховаємо EnergyRoot.
         if (energyRoot != null)
-            energyRoot.SetActive(!disableEnergy);
+            energyRoot.SetActive(true);
 
         if (disableEnergy)
         {
+            if (energyText != null)
+                energyText.text = "∞";
+
+            if (energyIcons != null)
+            {
+                for (int i = 0; i < energyIcons.Length; i++)
+                {
+                    if (energyIcons[i] != null)
+                        energyIcons[i].SetActive(true);
+                }
+            }
+
             if (timerText != null)
                 timerText.text = "";
 
@@ -228,8 +248,15 @@ public class EnergyManager : MonoBehaviour
             if (remaining.TotalSeconds < 0)
                 remaining = TimeSpan.Zero;
 
-            int minutes = Mathf.Max(0, (int)remaining.TotalMinutes);
-            int seconds = Mathf.Max(0, remaining.Seconds);
+            int minutes = Mathf.Max(
+                0,
+                (int)remaining.TotalMinutes
+            );
+
+            int seconds = Mathf.Max(
+                0,
+                remaining.Seconds
+            );
 
             timeText = string.Format(
                 "{0:00}:{1:00}",
@@ -258,8 +285,15 @@ public class EnergyManager : MonoBehaviour
 
     public void CloseNoEnergyPanel()
     {
-        if (noEnergyPanel != null)
-            noEnergyPanel.SetActive(false);
+        Debug.Log("OK CLICKED");
+
+        if (noEnergyPanel == null)
+        {
+            Debug.LogError("NO ENERGY PANEL НЕ ПРИЗНАЧЕНА!");
+            return;
+        }
+
+        noEnergyPanel.SetActive(false);
     }
 
     public void AddEnergy(int amount)
@@ -268,7 +302,11 @@ public class EnergyManager : MonoBehaviour
             return;
 
         currentEnergy += amount;
-        currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
+        currentEnergy = Mathf.Clamp(
+            currentEnergy,
+            0,
+            maxEnergy
+        );
 
         SaveEnergy();
         UpdateUI();
@@ -298,7 +336,11 @@ public class EnergyManager : MonoBehaviour
 
         currentEnergy = maxEnergy;
 
-        PlayerPrefs.SetInt(EnergyKey, currentEnergy);
+        PlayerPrefs.SetInt(
+            EnergyKey,
+            currentEnergy
+        );
+
         PlayerPrefs.SetString(
             LastEnergyTimeKey,
             DateTime.Now.ToString("O")

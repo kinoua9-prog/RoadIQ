@@ -26,6 +26,10 @@ public class RoadIQ_IAPManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        // ТИМЧАСОВО: не дозволяємо старій тестовій покупці
+        // автоматично ввімкнути нескінченну енергію.
+        PurchaseState.DisableEnergy = false;
+
         InitializeIAP();
     }
 
@@ -109,7 +113,8 @@ public class RoadIQ_IAPManager : MonoBehaviour
 
     private void OnPurchasePending(PendingOrder order)
     {
-        string productId = order.CartOrdered.Items().First().Product.definition.id;
+        string productId =
+            order.CartOrdered.Items().First().Product.definition.id;
 
         Debug.Log("IAP: Purchase pending: " + productId);
 
@@ -123,12 +128,20 @@ public class RoadIQ_IAPManager : MonoBehaviour
         switch (order)
         {
             case FailedOrder failedOrder:
-                Debug.LogError("IAP: Purchase confirmation failed: " + failedOrder.FailureReason);
+                Debug.LogError(
+                    "IAP: Purchase confirmation failed: " +
+                    failedOrder.FailureReason
+                );
                 break;
 
             case ConfirmedOrder confirmedOrder:
-                string productId = confirmedOrder.CartOrdered.Items().First().Product.definition.id;
-                Debug.Log("IAP: Purchase confirmed: " + productId);
+                string productId =
+                    confirmedOrder.CartOrdered.Items()
+                        .First().Product.definition.id;
+
+                Debug.Log(
+                    "IAP: Purchase confirmed: " + productId
+                );
                 break;
         }
     }
@@ -139,7 +152,8 @@ public class RoadIQ_IAPManager : MonoBehaviour
 
         foreach (Order order in orders.ConfirmedOrders)
         {
-            string productId = order.CartOrdered.Items().First().Product.definition.id;
+            string productId =
+                order.CartOrdered.Items().First().Product.definition.id;
 
             if (productId == RemoveAds)
             {
@@ -149,7 +163,11 @@ public class RoadIQ_IAPManager : MonoBehaviour
 
             if (productId == DisableEnergy)
             {
-                PurchaseState.DisableEnergy = true;
+                // ТИМЧАСОВО НЕ ВІДНОВЛЮЄМО НЕСКІНЧЕННУ ЕНЕРГІЮ.
+                // Це перевірка, чи стара тестова покупка
+                // ховає інтерфейс енергії через секунду.
+
+                PurchaseState.DisableEnergy = false;
 
                 if (EnergyManager.Instance != null)
                 {
@@ -157,14 +175,20 @@ public class RoadIQ_IAPManager : MonoBehaviour
                     EnergyManager.Instance.RefreshUI();
                 }
 
-                Debug.Log("IAP: Restore Disable Energy.");
+                Debug.LogWarning(
+                    "IAP: Disable Energy purchase found, " +
+                    "but restore is temporarily disabled."
+                );
             }
         }
     }
 
-    private void OnPurchasesFetchFailed(PurchasesFetchFailureDescription failure)
+    private void OnPurchasesFetchFailed(
+        PurchasesFetchFailureDescription failure)
     {
-        Debug.LogWarning("IAP: Purchases fetch failed: " + failure.message);
+        Debug.LogWarning(
+            "IAP: Purchases fetch failed: " + failure.message
+        );
     }
 
     private void GiveReward(string productId)
@@ -187,12 +211,18 @@ public class RoadIQ_IAPManager : MonoBehaviour
                 break;
 
             case DisableEnergy:
-                PurchaseState.DisableEnergy = true;
+                // ТИМЧАСОВО НЕ ВМИКАЄМО НЕСКІНЧЕННУ ЕНЕРГІЮ.
+                PurchaseState.DisableEnergy = false;
 
                 if (EnergyManager.Instance != null)
+                {
                     EnergyManager.Instance.CloseNoEnergyPanel();
+                    EnergyManager.Instance.RefreshUI();
+                }
 
-                Debug.Log("IAP: Disable Energy enabled.");
+                Debug.LogWarning(
+                    "IAP: Disable Energy is temporarily disabled."
+                );
                 break;
         }
 
@@ -211,8 +241,15 @@ public class RoadIQ_IAPManager : MonoBehaviour
         storeController.RestoreTransactions(OnTransactionsRestored);
     }
 
-    private void OnTransactionsRestored(bool success, string error)
+    private void OnTransactionsRestored(
+        bool success,
+        string error)
     {
-        Debug.Log("IAP: Restore transactions success: " + success + " Error: " + error);
+        Debug.Log(
+            "IAP: Restore transactions success: " +
+            success +
+            " Error: " +
+            error
+        );
     }
 }
